@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
+[ext_resource path="res://items/sets/gun/gun_set_data.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/resources/abilities/bullet_shot/bullet_shot_stats.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/resources/icons/fire.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "bullet_shot_1"
+unlocked_by_default = true
+icon = ExtResource( 4 )
+name = "BULLET_SHOT"
+tier = 0
+value = 1
+effects = [  ]
+tracking_text = ""
+weapon_id = "bullet_shot"
+type = 1
+sets = [ ExtResource( 2 ) ]
+stats = ExtResource( 3 )
