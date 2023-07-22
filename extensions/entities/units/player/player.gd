@@ -2,8 +2,23 @@ extends "res://entities/units/player/player.gd"
 
 var current_abilities = []
 
-func add_ability(ability:WeaponData):
-	current_abilities.push_back()
+onready var player_node = get_node("RunningSmoke")
 
-func add_weapon(weapon:WeaponData, pos:int)->void :
-	.add_weapon(weapon, pos)
+func apply_items_effects()->void :
+	for i in RunData.abilities.size():
+		add_ability(RunData.abilities[i])
+	.apply_items_effects()
+
+
+func add_ability(ability:WeaponData)->void :
+	var instance = ability.scene.instance()
+
+	instance.stats = ability.stats.duplicate()
+	instance.weapon_id = ability.weapon_id
+	instance.tier = ability.tier
+	
+	for effect in ability.effects:
+		instance.effects.push_back(effect.duplicate())
+
+	_weapons_container.add_child(instance)
+	current_abilities.push_back(instance)
