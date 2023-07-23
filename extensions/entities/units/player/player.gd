@@ -20,5 +20,5 @@ func add_ability(ability:WeaponData)->void :
 	for effect in ability.effects:
 		instance.effects.push_back(effect.duplicate())
 
-	_weapons_container.add_child(instance)
+	player_node.add_child(instance)
 	current_abilities.push_back(instance)

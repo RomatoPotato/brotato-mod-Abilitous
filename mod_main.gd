@@ -19,3 +19,7 @@ func _init(_modLoader = ModLoader):
 
 	# Add translations
 	# modLoader.add_translation_from_resource(trans_dir + "modname_text.en.translation")
+
+func _ready():
+	RunData.add_ability(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot_data.tres"))
+	RunData.add_ability(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/fire_shot_data.tres"))

@@ -10,10 +10,10 @@ func shoot(_distance:float)->void :
 	var angle_step = deg2rad(360 / _parent.current_stats.nb_projectiles)
 
 	for i in _parent.current_stats.nb_projectiles:
-		shoot_projectile(initial_position, angle)
+		shoot_projectile(angle)
 		angle += angle_step
 
-func shoot_projectile(initial_position:Vector2, angle:float)-> void :
+func shoot_projectile(angle:float)-> void :
 	var projectile = WeaponService.spawn_projectile(
 		angle,
 		_parent.current_stats,
