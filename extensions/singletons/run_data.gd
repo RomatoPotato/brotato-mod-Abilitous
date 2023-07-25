@@ -2,6 +2,7 @@ extends "res://singletons/run_data.gd"
 
 var abilities:Array
 
+
 func add_ability(ability:WeaponData)->WeaponData:
 	var new_ability = ability.duplicate()
 
@@ -9,7 +10,7 @@ func add_ability(ability:WeaponData)->WeaponData:
 
 	return new_ability
 
-
+# this func for prevent an error because abilities are weapons (abilities haven't pos)
 func add_weapon_dmg_dealt(pos:int, dmg_dealt:int)->void :
 	if pos == -1:
 		return

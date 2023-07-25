@@ -17,4 +17,9 @@ func _ready():
 	ability_mod_button.disconnect("pressed", self, "_on_StartButton_pressed")
 	
 func _on_AbilitiesModButton_pressed():
-	pass
+	GameModeManager.change_gamemode(GameMode.ABILITY)
+	._on_StartButton_pressed()
+	
+func _on_StartButton_pressed()->void :
+	GameModeManager.change_gamemode(GameMode.DEFAULT)
+	._on_StartButton_pressed()

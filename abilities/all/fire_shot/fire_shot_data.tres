@@ -1,14 +1,16 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://items/global/weapon_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/fire_shot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/fire_shot_stats.tres" type="Resource" id=3]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/fire_shot_effect.tres" type="Resource" id=4]
+[ext_resource path="res://projectiles/flames/sprites/bullet_flame_0004.png" type="Texture" id=5]
 
 [resource]
 script = ExtResource( 1 )
 my_id = "fire_shot_1"
 unlocked_by_default = false
+icon = ExtResource( 5 )
 name = "FIRE_SHOT"
 tier = 0
 value = 2

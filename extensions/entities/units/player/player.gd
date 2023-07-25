@@ -2,7 +2,7 @@ extends "res://entities/units/player/player.gd"
 
 var current_abilities = []
 
-onready var player_node = get_node("RunningSmoke")
+onready var player_node = get_node("RunningSmoke") # i chose a random node for abilities parent :D
 
 func apply_items_effects()->void :
 	for i in RunData.abilities.size():

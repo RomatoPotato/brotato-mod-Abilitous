@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/menus/shop/items_container.tscn" type="PackedScene" id=1]
+
+[node name="AbilitiesContainer" instance=ExtResource( 1 )]
+margin_bottom = 237.0
+
+[node name="Label" parent="." index="0"]
+text = "ABILITIES"
+
+[node name="ScrollContainer" parent="." index="1"]
+margin_bottom = 184.0
+rect_min_size = Vector2( 0, 145 )
+scroll_horizontal_enabled = true
+scroll_vertical_enabled = false
