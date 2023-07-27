@@ -8,7 +8,7 @@ var mod_effects:Dictionary = {
 var holding_ability
 
 
-func add_ability(ability:WeaponData)->WeaponData:
+func add_ability(ability:AbilityData)->WeaponData:
 	var new_ability = ability.duplicate()
 
 	abilities.push_back(new_ability)

@@ -21,9 +21,10 @@ func _init(_modLoader = ModLoader):
 	ModLoaderMod.install_script_extension("res://mods-unpacked/RomatoPotato-Abilitato/extensions/singletons/menu_data.gd")
 	ModLoaderMod.install_script_extension("res://mods-unpacked/RomatoPotato-Abilitato/extensions/singletons/item_service.gd")
 	ModLoaderMod.install_script_extension("res://mods-unpacked/RomatoPotato-Abilitato/extensions/ui/menus/run/difficulty_selection/difficulty_selection.gd")
+	ModLoaderMod.install_script_extension("res://mods-unpacked/RomatoPotato-Abilitato/extensions/ui/menus/shop/item_description.gd")
 
 	# Add translations
-	# modLoader.add_translation_from_resource(trans_dir + "modname_text.en.translation")
+	ModLoaderMod.add_translation("res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.en.translation")
 
 func _ready():
 	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot_data.tres"))

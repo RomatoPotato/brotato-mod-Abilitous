@@ -1,15 +1,33 @@
 class_name Ability
-extends Weapon
+extends Node2D
+
+var stats:Resource
+var ability_id:int
+var tier:int
+var effects:Array = []
+
+var current_stats: = AbilityStats.new()
+
+onready var _shooting_behavior:WeaponShootingBehavior = $AbilityShootingBehavior
 
 var need_shoot = false
+
+func _ready():
+	var _behavior = _shooting_behavior.init(self)
+	init_stats()
+
+
+func init_stats():
+	current_stats = stats
+
+	for effect in effects:
+		if effect is BurningEffect:
+			current_stats.burning_data = BurningData.new(effect.burning_data.chance, effect.burning_data.damage, effect.burning_data.duration, 0)
+
 
 func set_position(initial_position:Vector2):
 	_shooting_behavior.initial_position = initial_position
 
-func _physics_process(delta):
-	._physics_process(delta)
-
-	_current_cooldown = max(_current_cooldown - Utils.physics_one(delta), 0)
 
 func shoot():
 	if !should_shoot():
@@ -18,7 +36,6 @@ func shoot():
 	_shooting_behavior.shoot(current_stats.max_range)
 	
 	need_shoot = false
-	_current_cooldown = current_stats.cooldown
 
 func should_shoot():
-	return need_shoot && _current_cooldown == 0
+	return need_shoot

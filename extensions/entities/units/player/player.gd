@@ -13,11 +13,11 @@ func apply_items_effects()->void :
 	.apply_items_effects()
 
 
-func add_ability(ability:WeaponData)->void :
+func add_ability(ability:AbilityData)->void :
 	var instance = ability.scene.instance()
-
+	
 	instance.stats = ability.stats.duplicate()
-	instance.weapon_id = ability.weapon_id
+	instance.ability_id = ability.ability_id
 	instance.tier = ability.tier
 	
 	for effect in ability.effects:

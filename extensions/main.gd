@@ -16,6 +16,6 @@ func _ready():
 	
 func _input(event):
 	if event is InputEventKey and event.pressed and event.scancode == KEY_SPACE and GameModeManager.current_gamemode() == GameMode.ABILITY:
-		if bullet_shot._current_cooldown == 0:
-			bullet_shot.set_position(_player.position)
-			bullet_shot.need_shoot = true
+		bullet_shot.set_position(_player.position)
+		bullet_shot.need_shoot = true
+		bullet_shot.shoot()

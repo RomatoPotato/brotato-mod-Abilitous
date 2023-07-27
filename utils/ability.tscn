@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/shooting_behaviors/ability_shooting_behavour.gd" type="Script" id=2]
-[ext_resource path="res://weapons/weapon.tscn" type="PackedScene" id=3]
 
-[node name="Weapon" instance=ExtResource( 3 )]
+[node name="Ability" type="Node2D"]
 script = ExtResource( 1 )
-outline_shader_mat = null
 
-[node name="ShootingBehavior" parent="." index="4"]
+[node name="AbilityShootingBehavior" type="Node2D" parent="."]
 script = ExtResource( 2 )
-
-[editable path="Sprite/Hitbox"]
