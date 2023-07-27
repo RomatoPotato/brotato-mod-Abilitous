@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=7 format=2]
 
-[ext_resource path="res://weapons/weapon_stats/ranged_weapon_stats.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/resources/weapons/weapon_stats/ability_weapon_stats.gd" type="Script" id=1]
 [ext_resource path="res://projectiles/bullet/bullet_projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://weapons/ranged/double_barrel_shotgun/gun_shotgun_sawed_off_shot_03.wav" type="AudioStream" id=3]
 [ext_resource path="res://weapons/ranged/double_barrel_shotgun/gun_shotgun_sawed_off_shot_01.wav" type="AudioStream" id=4]
@@ -10,12 +10,12 @@
 [resource]
 script = ExtResource( 1 )
 cooldown = 60
-damage = 10
+damage = 20
 accuracy = 1.0
-crit_chance = 0.03
+crit_chance = 0.0
 crit_damage = 1.5
 min_range = 0
-max_range = 100
+max_range = 200
 knockback = 0
 effect_scale = 1.0
 scaling_stats = [  ]
@@ -23,16 +23,14 @@ lifesteal = 0.0
 shooting_sounds = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ) ]
 sound_db_mod = -5
 is_healing = false
-recoil = 25
+recoil = 0
 recoil_duration = 0.1
 additional_cooldown_every_x_shots = -1
 additional_cooldown_multiplier = -1.0
 nb_projectiles = 20
-projectile_spread = 0.0
-piercing = 10000
-piercing_dmg_reduction = 0.0
+piercing = 0
+piercing_dmg_reduction = 1.0
 bounce = 0
-bounce_dmg_reduction = 0.5
-projectile_speed = 1000
-increase_projectile_speed_with_range = false
+bounce_dmg_reduction = 1.0
+projectile_speed = 2000
 projectile_scene = ExtResource( 2 )

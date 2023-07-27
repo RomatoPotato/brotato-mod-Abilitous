@@ -1,6 +1,11 @@
 extends "res://singletons/run_data.gd"
 
 var abilities:Array
+var mod_effects:Dictionary = {
+	"ability_slot": 4
+}
+
+var holding_ability
 
 
 func add_ability(ability:WeaponData)->WeaponData:
@@ -16,3 +21,9 @@ func add_weapon_dmg_dealt(pos:int, dmg_dealt:int)->void :
 		return
 	
 	.add_weapon_dmg_dealt(pos, dmg_dealt)
+
+
+func reset(restart:bool = false)->void :
+	abilities = []
+
+	.reset(restart)

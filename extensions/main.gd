@@ -6,7 +6,7 @@ var bullet_shot
 
 func _ready():
 	if GameModeManager.current_gamemode() == GameMode.ABILITY:
-		bullet_shot = _player.current_abilities[0]
+		bullet_shot = RunData.holding_ability
 	
 	var life_container = $"UI/HUD/LifeContainer"
 	

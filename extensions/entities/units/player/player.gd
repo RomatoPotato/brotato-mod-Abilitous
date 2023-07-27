@@ -2,7 +2,10 @@ extends "res://entities/units/player/player.gd"
 
 var current_abilities = []
 
-onready var player_node = get_node("RunningSmoke") # i chose a random node for abilities parent :D
+var abilities = Node.new()
+
+func _ready():
+	add_child(abilities)
 
 func apply_items_effects()->void :
 	for i in RunData.abilities.size():
@@ -20,5 +23,11 @@ func add_ability(ability:WeaponData)->void :
 	for effect in ability.effects:
 		instance.effects.push_back(effect.duplicate())
 
-	player_node.add_child(instance)
+	abilities.add_child(instance)
 	current_abilities.push_back(instance)
+	RunData.holding_ability = instance
+
+func die(knockback_vector:Vector2 = Vector2.ZERO, p_cleaning_up:bool = false)->void :
+	.die(knockback_vector, p_cleaning_up)
+
+	abilities.queue_free()
