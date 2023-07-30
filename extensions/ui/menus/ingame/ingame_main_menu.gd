@@ -8,6 +8,9 @@ func _ready():
 		container.add_child_below_node(_weapons_container, abilities_container)
 		abilities_container.set_data(get_abilities_label_text(), 4, RunData.abilities)
 
+		if not _focus_manager.initialized:
+			_focus_manager.init_abilities_container(abilities_container)
+
 
 func get_abilities_label_text()->String:
 	return tr("ABILITIES") + " (" + str(RunData.abilities.size()) + "/" + str(RunData.mod_effects["ability_slot"]) + ")"

@@ -14,3 +14,21 @@ export (int) var projectile_speed: = 3000
 export (PackedScene) var projectile_scene = null
 
 var burning_data:BurningData = BurningData.new()
+
+var weapon_stats_for_color = WeaponStats.new()
+var col_a = weapon_stats_for_color.col_a
+var col_neutral_a = weapon_stats_for_color.col_neutral_a
+var col_pos_a = weapon_stats_for_color.col_pos_a
+var col_neg_a = weapon_stats_for_color.col_neg_a
+var col_b = weapon_stats_for_color.col_b
+var init_a = weapon_stats_for_color.init_a
+
+func get_text() -> String :
+    var text = ""
+
+    text += Text.text("DAMAGE_FORMATTED", [col_a + tr("STAT_DAMAGE") + col_b, get_damage_text()])
+    
+    return text
+
+func get_damage_text()->String:
+	return str(damage)

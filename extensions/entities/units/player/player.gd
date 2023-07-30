@@ -20,8 +20,9 @@ func add_ability(ability:AbilityData)->void :
 	instance.ability_id = ability.ability_id
 	instance.tier = ability.tier
 	
-	for effect in ability.effects:
-		instance.effects.push_back(effect.duplicate())
+	if ability.effects != null:
+		for effect in ability.effects:
+			instance.effects.push_back(effect.duplicate())
 
 	abilities.add_child(instance)
 	current_abilities.push_back(instance)

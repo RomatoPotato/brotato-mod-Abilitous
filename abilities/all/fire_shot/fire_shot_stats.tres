@@ -12,8 +12,8 @@
 script = ExtResource( 1 )
 damage = 1
 max_range = 400
-knockback = 0
-lifesteal = 0.0
+knockback = null
+lifesteal = null
 shooting_sounds = [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ) ]
 sound_db_mod = -5
 nb_projectiles = 30
