@@ -13,6 +13,7 @@ func shoot(_distance:float)->void :
 		shoot_projectile(angle)
 		angle += angle_step
 
+
 func shoot_projectile(angle:float)-> void :
 	var stats = _parent.current_stats
 	var projectile = Utils.instance_scene_on_main(stats.projectile_scene, initial_position)
@@ -25,8 +26,6 @@ func shoot_projectile(angle:float)-> void :
 	projectile.weapon_stats = imitate_weapon_stats(stats)
 	projectile.set_damage(stats.damage, 1, 0, 0, stats.burning_data, false)
 	projectile.set_knockback_vector(Vector2.ZERO, stats.knockback)
-
-	emit_signal("projectile_shot", projectile)
 
 
 func imitate_weapon_stats(stats:AbilityStats) -> WeaponStats :

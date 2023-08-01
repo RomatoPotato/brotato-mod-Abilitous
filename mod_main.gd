@@ -23,6 +23,8 @@ func _init(_modLoader = ModLoader):
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/run/difficulty_selection/difficulty_selection.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/shop/item_description.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/global/focus_manager.gd")
+	ModLoaderMod.install_script_extension(ext_dir + "entities/units/enemies/enemy.gd")
+	ModLoaderMod.install_script_extension(ext_dir + "weapons/shooting_behaviors/ranged_weapon_shooting_behavior.gd")
 	
 	ModLoaderMod.new().call_deferred("install_script_extension", ext_dir + "ui/menus/shop/shop.gd")
 

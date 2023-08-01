@@ -17,6 +17,8 @@ func _ready():
 		newc.add_child(abilities_container)
 		
 		abilities_container.set_data(get_abilities_label_text(), 4, RunData.abilities)
+		
+		_focus_manager.init_abilities_container(abilities_container)
 
 
 func get_abilities_label_text()->String:

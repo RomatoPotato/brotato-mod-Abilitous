@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/resources/icons/bullet_shot.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot_stats.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot_effect.tres" type="Resource" id=4]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot.tscn" type="PackedScene" id=5]
 
 [resource]
@@ -13,7 +14,7 @@ icon = ExtResource( 2 )
 name = "BULLET_SHOT"
 tier = 0
 value = 1
-effects = null
+effects = [ ExtResource( 4 ) ]
 tracking_text = null
 ability_id = "bullet_shot"
 scene = ExtResource( 5 )

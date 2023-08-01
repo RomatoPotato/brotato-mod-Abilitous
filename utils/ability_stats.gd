@@ -2,6 +2,7 @@ class_name AbilityStats
 extends Resource
 
 export (int) var damage: = 1
+export (int) var cooldown: = 10
 export (int, 0, 10000) var max_range: = 100
 export (int, 0, 10000) var knockback: = 0
 export (float, 0, 1.0, 0.01) var lifesteal: = 0.0
