@@ -7,6 +7,11 @@ export (Resource) var stats = null
 export (Resource) var upgrades_into
 export (String) var description = ""
 
+
+func get_category()->int:
+	return ModCategory.ABILITY
+
+
 func get_ability_stats_text() -> String :
 	return stats.get_text()
 

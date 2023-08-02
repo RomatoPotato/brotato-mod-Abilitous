@@ -3,6 +3,7 @@
 [ext_resource path="res://ui/menus/shop/items_container.tscn" type="PackedScene" id=1]
 
 [node name="AbilitiesContainer" instance=ExtResource( 1 )]
+nb_columns = 2
 
 [node name="Label" parent="." index="0"]
 text = "ABILITIES"

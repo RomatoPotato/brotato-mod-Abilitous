@@ -15,6 +15,7 @@ func add_ability(ability:AbilityData)->WeaponData:
 
 	return new_ability
 
+
 # this func for prevent an error because abilities are weapons (abilities haven't pos)
 func add_weapon_dmg_dealt(pos:int, dmg_dealt:int)->void :
 	if pos == -1:
@@ -27,3 +28,7 @@ func reset(restart:bool = false)->void :
 	abilities = []
 
 	.reset(restart)
+
+
+func has_ability_slot_available()->bool:
+	return abilities.size() < mod_effects["ability_slot"]
