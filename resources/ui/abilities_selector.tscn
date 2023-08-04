@@ -1,0 +1,147 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/abilitato_ability_section.png" type="Texture" id=1]
+[ext_resource path="res://resources/fonts/actual/base/font_button.tres" type="DynamicFont" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ui/abilities_selector.gd" type="Script" id=3]
+
+[node name="AbilitiesSelector" type="GridContainer"]
+margin_right = 400.0
+margin_bottom = 400.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+columns = 3
+script = ExtResource( 3 )
+
+[node name="EmptySpace" type="Control" parent="."]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Ability1" type="TextureRect" parent="."]
+margin_left = 84.0
+margin_right = 164.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="Ability1"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+expand = true
+
+[node name="CooldownScore" type="Label" parent="Ability1"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="AbilityPlace" type="Node2D" parent="Ability1"]
+
+[node name="EmptySpace2" type="Control" parent="."]
+margin_left = 168.0
+margin_right = 248.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Ability4" type="TextureRect" parent="."]
+margin_top = 84.0
+margin_right = 80.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="Ability4"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+expand = true
+
+[node name="CooldownScore" type="Label" parent="Ability4"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="AbilityPlace" type="Node2D" parent="Ability4"]
+
+[node name="EmptySpace3" type="Control" parent="."]
+margin_left = 84.0
+margin_top = 84.0
+margin_right = 164.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Ability2" type="TextureRect" parent="."]
+margin_left = 168.0
+margin_top = 84.0
+margin_right = 248.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="Ability2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+expand = true
+
+[node name="CooldownScore" type="Label" parent="Ability2"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="AbilityPlace" type="Node2D" parent="Ability2"]
+
+[node name="EmptySpace4" type="Control" parent="."]
+margin_top = 168.0
+margin_right = 80.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Ability3" type="TextureRect" parent="."]
+margin_left = 84.0
+margin_top = 168.0
+margin_right = 164.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="Ability3"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+expand = true
+
+[node name="CooldownScore" type="Label" parent="Ability3"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="AbilityPlace" type="Node2D" parent="Ability3"]

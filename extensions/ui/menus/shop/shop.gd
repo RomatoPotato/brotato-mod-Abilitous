@@ -5,8 +5,13 @@ onready var empty_space = $"Content/MarginContainer/HBoxContainer/VBoxContainer/
 
 var abilities_container
 
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
+var ModCategory = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/mod_category.gd")
+
+
 func _ready():
-	if GameModeManager.current_gamemode() == GameMode.ABILITY:
+	if GameModeManager.current_gamemode_is_ability():
 		abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/menus/shop/abilities_container.tscn").instance()
 
 		container.add_child_below_node(empty_space, abilities_container)
@@ -26,7 +31,7 @@ func get_abilities_label_text()->String:
 func on_shop_item_bought(shop_item:ShopItem)->void :
 	.on_shop_item_bought(shop_item)
 
-	if GameModeManager.current_gamemode() == GameMode.ABILITY:
+	if GameModeManager.current_gamemode_is_ability():
 		if shop_item.item_data is AbilityData:
 			RunData.add_ability(shop_item.item_data)
 			abilities_container.set_label(get_abilities_label_text())

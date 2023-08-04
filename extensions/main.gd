@@ -1,29 +1,44 @@
 extends "res://main.gd"
 
-var bullet_shot
+var abilities_selector
 
-var t1
-var t2
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var hud_size
+
 
 func _ready():
-	if GameModeManager.current_gamemode() == GameMode.ABILITY:
-		bullet_shot = RunData.holding_ability
+	if GameModeManager.current_gamemode_is_ability():
+		abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/abilities_selector.tscn").instance()
 
-	var a = $"UI/HUD/LifeContainer"
-	t1 = $"UI/HUD/LifeContainer/UIGold/GoldLabel".duplicate()
-	t2 = t1.duplicate()
-	
-	a.add_child_below_node(_ui_bonus_gold, t1)
-	a.add_child_below_node(t1, t2)
+		hud_size = _hud.rect_size.y
+		_hud.rect_size.y = 1080
+		_hud.add_child(abilities_selector)
+
+		for ability in RunData.abilities:
+			abilities_selector.add_ability(ability, _player)
 
 
 func _process(_delta):
-	t1.text = "Melee kills: " + str(_player.killed_by_melee)
-	t2.text = "Ranged kills: " + str(_player.killed_by_ranged)
+	if GameModeManager.current_gamemode_is_ability():
+		abilities_selector.display_cooldown()
 
+
+func _on_player_died(_p_player:Player)->void :
+	if GameModeManager.current_gamemode_is_ability():
+		abilities_selector.free_all_containers()
 	
-func _input(event):
-	if event is InputEventKey and event.pressed and event.scancode == KEY_SPACE:
-		if GameModeManager.current_gamemode() == GameMode.ABILITY and not _cleaning_up:
-			bullet_shot.set_position(_player.position)
-			bullet_shot.shoot()
+	._on_player_died(_p_player)
+
+
+func _on_EndWaveTimer_timeout()->void :
+	if GameModeManager.current_gamemode_is_ability():
+		_hud.rect_size.y = hud_size
+		abilities_selector.hide()
+
+	._on_EndWaveTimer_timeout()
+
+
+
+func _input(_event):
+	if GameModeManager.current_gamemode_is_ability():
+		abilities_selector.activate_ability()

@@ -2,8 +2,11 @@ extends "res://ui/menus/run/difficulty_selection/difficulty_selection.gd"
 
 onready var description_container = $"MarginContainer/VBoxContainer/DescriptionContainer"
 
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+
+
 func _ready():
-	if GameModeManager.current_gamemode() == GameMode.ABILITY:
+	if GameModeManager.current_gamemode_is_ability():
 		var ability_panel = _character_panel.duplicate()
 		ability_panel._item_description = _character_panel._item_description
 
@@ -13,7 +16,7 @@ func _ready():
 		description_container.move_child(ability_panel, 0)
 
 func manage_back(event:InputEvent)->void :
-	if GameModeManager.current_gamemode() == GameMode.ABILITY:
+	if GameModeManager.current_gamemode_is_ability():
 		if event.is_action_pressed("ui_cancel") and not cancelled: # Brotato's code from difficulty_selection.gd
 			cancelled = true # Brotato's code from difficulty_selection.gd
 			RunData.is_endless_run = false # Brotato's code from difficulty_selection.gd

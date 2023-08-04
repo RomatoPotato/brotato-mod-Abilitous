@@ -8,7 +8,7 @@ var effects:Array = []
 
 var player:Player
 
-var current_stats: = AbilityStats.new()
+var current_stats
 
 onready var _shooting_behavior:WeaponShootingBehavior = $AbilityShootingBehavior
 
@@ -24,6 +24,8 @@ func _ready():
 	var _behavior = _shooting_behavior.init(self)
 	init_stats()
 
+	reload_track = current_stats.cooldown
+
 
 func init_stats():
 	current_stats = stats
@@ -37,31 +39,30 @@ func init_stats():
 			if effect.key == "reload_by_melee_kills":
 				reload_condition = ReloadCondition.MELEE_KILLS
 
+	match reload_condition:
+		ReloadCondition.RANGED_KILLS:
+			var _tracker = player.connect("killed_by_ranged", self, "kill_tracker")
+		ReloadCondition.MELEE_KILLS:
+			var _tracker = player.connect("killed_by_melee", self, "kill_tracker")
+
 
 func set_player(_player:Player):
 	player = _player
 
 
-func set_position(initial_position:Vector2):
-	_shooting_behavior.initial_position = initial_position
+func kill_tracker():
+	reload_track -= 1
 
 
 func shoot():
 	if !should_shoot():
 		return
 
+	_shooting_behavior.initial_position = player.position
 	_shooting_behavior.shoot(current_stats.max_range)
 
-	match reload_condition:
-		ReloadCondition.RANGED_KILLS:
-			player.killed_by_ranged = 0
-		ReloadCondition.MELEE_KILLS:
-			player.killed_by_melee = 0
+	reload_track = current_stats.cooldown
 
 
 func should_shoot():
-	match reload_condition:
-		ReloadCondition.RANGED_KILLS:
-			return player.killed_by_ranged >= current_stats.cooldown
-		ReloadCondition.MELEE_KILLS:
-			return player.killed_by_melee >= current_stats.cooldown
+	return reload_track <= 0

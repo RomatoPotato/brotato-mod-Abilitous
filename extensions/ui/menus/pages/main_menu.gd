@@ -1,5 +1,8 @@
 extends "res://ui/menus/pages/main_menu.gd"
 
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+
+
 func _ready():
 	var buttons_left = $"HBoxContainer/ButtonsLeft"
 	
@@ -16,10 +19,13 @@ func _ready():
 	ability_mod_button.connect("pressed", self, "_on_AbilitiesModButton_pressed")
 	ability_mod_button.disconnect("pressed", self, "_on_StartButton_pressed")
 	
+
 func _on_AbilitiesModButton_pressed():
-	GameModeManager.change_gamemode(GameMode.ABILITY)
+	GameModeManager.change_gamemode(GameModeManager.GameMode.ABILITY)
 	._on_StartButton_pressed()
 	
+
 func _on_StartButton_pressed()->void :
-	GameModeManager.change_gamemode(GameMode.DEFAULT)
+	GameModeManager.change_gamemode(GameModeManager.GameMode.DEFAULT)
 	._on_StartButton_pressed()
+

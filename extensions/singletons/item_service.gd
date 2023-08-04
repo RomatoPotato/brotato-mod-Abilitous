@@ -10,6 +10,9 @@ var starting_spawn_chance = spawn_chance
 
 var TIER_DATA_ABILITIES = TierData.size()
 
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+
+
 func reset_tiers_data()->void :
 	.reset_tiers_data()
 
@@ -30,10 +33,10 @@ func init_unlocked_pool()->void :
 		_tiers_data[ability.tier][TIER_DATA_ABILITIES].push_back(ability)
 
 
-
 func get_shop_items(wave:int, number:int = NB_SHOP_ITEMS, shop_items:Array = [], locked_items:Array = [])->Array:
-	spawned_abilities = []
-	spawn_chance = starting_spawn_chance
+	if GameModeManager.current_gamemode_is_ability():
+		spawned_abilities = []
+		spawn_chance = starting_spawn_chance
 
 	return .get_shop_items(wave, number, shop_items, locked_items)
 
@@ -41,17 +44,18 @@ func get_shop_items(wave:int, number:int = NB_SHOP_ITEMS, shop_items:Array = [],
 func get_rand_item_from_wave(wave:int, type:int, shop_items:Array = [], prev_shop_items:Array = [], fixed_tier:int = - 1)->ItemParentData:
 	var current_item_to_spawn = .get_rand_item_from_wave(wave, type, shop_items, prev_shop_items, fixed_tier)
 
-	if randf() > (1 - spawn_chance):
-		spawn_chance /= spawn_chance_reduction
+	if GameModeManager.current_gamemode_is_ability():
+		if randf() > (1 - spawn_chance):
+			spawn_chance /= spawn_chance_reduction
 
-		var ability_to_spawn = Utils.get_rand_element(_tiers_data[0][TIER_DATA_ABILITIES])
+			var ability_to_spawn = Utils.get_rand_element(_tiers_data[0][TIER_DATA_ABILITIES])
 
-		for ability in spawned_abilities:
-			if ability == ability_to_spawn:
-				return current_item_to_spawn
+			for ability in spawned_abilities:
+				if ability == ability_to_spawn:
+					return current_item_to_spawn
 
-		spawned_abilities.push_back(ability_to_spawn)
+			spawned_abilities.push_back(ability_to_spawn)
 
-		return ability_to_spawn
-	else:
-		return current_item_to_spawn
+			return ability_to_spawn
+	
+	return current_item_to_spawn

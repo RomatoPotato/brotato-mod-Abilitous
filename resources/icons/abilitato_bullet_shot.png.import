@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_shot.png-29f1394ce5015a7e1c1462f1d8594d5f.stex"
+path="res://.import/abilitato_bullet_shot.png-29220a0cb7aa47f6a3641315e50ba9ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/RomatoPotato-Abilitato/resources/icons/fire_shot.png"
-dest_files=[ "res://.import/fire_shot.png-29f1394ce5015a7e1c1462f1d8594d5f.stex" ]
+source_file="res://mods-unpacked/RomatoPotato-Abilitato/resources/icons/abilitato_bullet_shot.png"
+dest_files=[ "res://.import/abilitato_bullet_shot.png-29220a0cb7aa47f6a3641315e50ba9ac.stex" ]
 
 [params]
 

@@ -1,4 +1,3 @@
-class_name AbilityStats
 extends Resource
 
 export (int) var damage: = 1

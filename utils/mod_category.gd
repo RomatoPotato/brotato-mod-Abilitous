@@ -1,4 +1,4 @@
-class_name ModCategory
+extends Node
 
 enum {
     ABILITY = 10

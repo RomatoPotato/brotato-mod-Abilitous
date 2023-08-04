@@ -28,7 +28,7 @@ func shoot_projectile(angle:float)-> void :
 	projectile.set_knockback_vector(Vector2.ZERO, stats.knockback)
 
 
-func imitate_weapon_stats(stats:AbilityStats) -> WeaponStats :
+func imitate_weapon_stats(stats:Resource) -> WeaponStats :
 	var new_stats = RangedWeaponStats.new()
 
 	new_stats.burning_data = stats.burning_data

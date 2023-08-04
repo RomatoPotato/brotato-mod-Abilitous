@@ -1,4 +1,10 @@
-class_name GameModeManager
+extends Node
+
+enum GameMode {
+	DEFAULT,
+	ABILITY
+}
+
 
 static func change_gamemode(gamemode:int) -> void:
 	match gamemode:
@@ -9,8 +15,6 @@ static func change_gamemode(gamemode:int) -> void:
 			MenuData.difficulty_selection_scene = MenuData.ability_selection_scene
 			pass
 
-static func current_gamemode() -> int:
-	if MenuData.difficulty_selection_scene == MenuData.ability_selection_scene:
-		return GameMode.ABILITY
-	else:
-		return GameMode.DEFAULT
+
+static func current_gamemode_is_ability() -> bool:
+	return MenuData.difficulty_selection_scene == MenuData.ability_selection_scene
