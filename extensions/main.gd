@@ -17,6 +17,8 @@ func _ready():
 		for ability in RunData.abilities:
 			abilities_selector.add_ability(ability, _player)
 
+		abilities_selector.load_cooldowns(RunData.abilities_cooldowns)
+
 
 func _process(_delta):
 	if GameModeManager.current_gamemode_is_ability():
@@ -38,7 +40,12 @@ func _on_EndWaveTimer_timeout()->void :
 	._on_EndWaveTimer_timeout()
 
 
-
-func _input(_event):
-	if GameModeManager.current_gamemode_is_ability():
+func _physics_process(_delta):
+	if GameModeManager.current_gamemode_is_ability() and not _cleaning_up:
 		abilities_selector.activate_ability()
+
+
+func clean_up_room(is_last_wave:bool = false, is_run_lost:bool = false, is_run_won:bool = false)->void :
+	.clean_up_room(is_last_wave, is_run_lost, is_run_won)
+
+	RunData.abilities_cooldowns = abilities_selector.save_cooldowns()

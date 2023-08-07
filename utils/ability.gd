@@ -12,7 +12,7 @@ var current_stats
 
 onready var _shooting_behavior:WeaponShootingBehavior = $AbilityShootingBehavior
 
-var reload_track:int
+var reload_track:int = -1
 var reload_condition:int
 
 enum ReloadCondition{
@@ -24,7 +24,8 @@ func _ready():
 	var _behavior = _shooting_behavior.init(self)
 	init_stats()
 
-	reload_track = current_stats.cooldown
+	if reload_track == -1:
+		reload_track = current_stats.cooldown
 
 
 func init_stats():
@@ -51,7 +52,7 @@ func set_player(_player:Player):
 
 
 func kill_tracker():
-	reload_track -= 1
+	reload_track -= 1 if reload_track > 0 else 0
 
 
 func shoot():

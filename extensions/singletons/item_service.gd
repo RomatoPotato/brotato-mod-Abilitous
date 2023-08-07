@@ -11,6 +11,7 @@ var starting_spawn_chance = spawn_chance
 var TIER_DATA_ABILITIES = TierData.size()
 
 var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
 
 
 func reset_tiers_data()->void :
@@ -59,3 +60,16 @@ func get_rand_item_from_wave(wave:int, type:int, shop_items:Array = [], prev_sho
 			return ability_to_spawn
 	
 	return current_item_to_spawn
+
+
+func process_item_box(wave:int, _consumable_data:ConsumableData, fixed_tier:int = - 1)->ItemParentData:
+	if GameModeManager.current_gamemode_is_ability():
+		while true:
+			var box_item = .process_item_box(wave, _consumable_data, fixed_tier)
+
+			ModLoaderLog.info(str(box_item.my_id), "ITEM_BOX_ITEM")
+			
+			if not box_item is AbilityData:
+				return box_item
+
+	return .process_item_box(wave, _consumable_data, fixed_tier)

@@ -26,10 +26,6 @@ func _ready():
 	}
 
 
-func _physics_process(_delta):
-	activate_ability()
-
-
 func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 	for container in free_containers:
 		if free_containers[container]:
@@ -74,6 +70,25 @@ func activate_ability():
 	if Input.is_key_pressed(KEY_LEFT):
 		if !container_is_free(ability_4_container):
 			current_abilities[ability_4_container].shoot()
+
+		
+func save_cooldowns():
+	var cooldowns = []
+
+	for container in current_abilities:
+		if current_abilities[container] != null:
+			cooldowns.push_back(current_abilities[container].reload_track)
+
+	return cooldowns
+
+
+func load_cooldowns(cooldowns):
+	if cooldowns != null:
+		var i = 0
+		for container in current_abilities:
+			if current_abilities[container] != null:
+				current_abilities[container].reload_track = cooldowns[i] if cooldowns.size() >= (i + 1) else current_abilities[container].current_stats.cooldown
+				i += 1
 
 
 func free_container(_container:Node):

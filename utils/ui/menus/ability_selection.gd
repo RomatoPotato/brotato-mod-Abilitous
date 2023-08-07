@@ -68,16 +68,19 @@ func get_reward_type()->int:
 func on_element_pressed(element:InventoryElement)->void :
 	if ability_added:
 		return 
+
+	var starting_ability
 	
 	if element.is_random:
 		ability_added = true
-		RunData.add_ability(Utils.get_rand_element(available_elements))
-	elif element.is_special:
-		return 
+		starting_ability = Utils.get_rand_element(available_elements)
 	else :
 		ability_added = true
-		RunData.add_ability(element.item)
+		starting_ability = element.item
 		
+	RunData.starting_ability = starting_ability
+	RunData.add_ability(starting_ability)
+	
 	var _error = get_tree().change_scene(MenuData.current_difficulty_selection_scene)
 
 

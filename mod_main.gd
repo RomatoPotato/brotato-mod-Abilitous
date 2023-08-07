@@ -25,6 +25,7 @@ func _init(_modLoader = ModLoader):
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/global/focus_manager.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/shop/shop_items_container.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "entities/units/movement_behaviors/player_movement_behavior.gd")
+	ModLoaderMod.install_script_extension(ext_dir + "singletons/progress_data.gd")
 	
 	ModLoaderMod.new().call_deferred("install_script_extension", ext_dir + "ui/menus/shop/shop.gd")
 
