@@ -30,7 +30,6 @@ func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 	for container in free_containers:
 		if free_containers[container]:
 			get_container_icon(container).texture = ability_data.icon
-			get_container_label(container).text = str(ability_data.stats.cooldown)
 
 			var instance = ability_data.scene.instance()
 	
@@ -45,6 +44,7 @@ func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 					instance.effects.push_back(effect.duplicate())
 				
 			get_container_place(container).add_child(instance)
+			get_container_progress(container).max_value = instance.stats.cooldown
 
 			free_containers[container] = false
 			current_abilities[container] = instance
@@ -54,22 +54,29 @@ func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 func display_cooldown():
 	for container in current_abilities:
 		if !container_is_free(container):
+			get_container_progress(container).value = current_abilities[container].reload_track
 			get_container_label(container).text = str(current_abilities[container].reload_track)
+			if current_abilities[container].ability_is_charged():
+				container.set_self_modulate(Color.green)
 
 
 func activate_ability():
 	if Input.is_key_pressed(KEY_UP):
 		if !container_is_free(ability_1_container):
 			current_abilities[ability_1_container].shoot()
+			ability_1_container.set_self_modulate(Color.black)
 	if Input.is_key_pressed(KEY_RIGHT):
 		if !container_is_free(ability_2_container):
 			current_abilities[ability_2_container].shoot()
+			ability_2_container.set_self_modulate(Color.black)
 	if Input.is_key_pressed(KEY_DOWN):
 		if !container_is_free(ability_3_container):
 			current_abilities[ability_3_container].shoot()
+			ability_3_container.set_self_modulate(Color.black)
 	if Input.is_key_pressed(KEY_LEFT):
 		if !container_is_free(ability_4_container):
 			current_abilities[ability_4_container].shoot()
+			ability_4_container.set_self_modulate(Color.black)
 
 		
 func save_cooldowns():
@@ -93,8 +100,9 @@ func load_cooldowns(cooldowns):
 
 func free_container(_container:Node):
 	get_container_icon(_container).texture = null
-	get_container_label(_container).text = ""
 	get_container_place(_container).queue_free()
+	get_container_progress(_container).max_value = 0
+	get_container_label(_container).text = ""
 
 	free_containers[_container] = true
 	current_abilities[_container] = null
@@ -112,12 +120,16 @@ func container_is_free(_container:Node):
 
 
 func get_container_icon(_container:Node) -> Node:
-	return get_node(str(get_path_to(_container)) + "/Icon")
+	return get_node(str(get_path_to(_container)) + "/AbilityContainer/Icon")
 	
 	
-func get_container_label(_container:Node) -> Node:
-	return get_node(str(get_path_to(_container)) + "/CooldownScore")
+func get_container_progress(_container:Node) -> Node:
+	return get_node(str(get_path_to(_container)) + "/AbilityContainer/CooldownProgress")
 	
 	
 func get_container_place(_container:Node) -> Node:
-	return get_node(str(get_path_to(_container)) + "/AbilityPlace")
+	return get_node(str(get_path_to(_container)) + "/AbilityContainer/AbilityPlace")
+	
+
+func get_container_label(_container:Node) -> Node:
+	return get_node(str(get_path_to(_container)) + "/Label")

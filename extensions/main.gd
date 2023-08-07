@@ -1,6 +1,7 @@
 extends "res://main.gd"
 
 var abilities_selector
+var selector_default = true
 
 var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
 var hud_size
@@ -8,7 +9,7 @@ var hud_size
 
 func _ready():
 	if GameModeManager.current_gamemode_is_ability():
-		abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/abilities_selector.tscn").instance()
+		abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/abilities_selector/abilities_selector.tscn").instance()
 
 		hud_size = _hud.rect_size.y
 		_hud.rect_size.y = 1080
@@ -23,6 +24,27 @@ func _ready():
 func _process(_delta):
 	if GameModeManager.current_gamemode_is_ability():
 		abilities_selector.display_cooldown()
+
+
+func _input(_event):
+	if Input.is_key_pressed(KEY_C) and not _cleaning_up:
+		RunData.abilities_cooldowns = abilities_selector.save_cooldowns()
+
+		_hud.remove_child(abilities_selector)
+
+		if selector_default:
+			abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/abilities_selector/abilities_selector_2.tscn").instance()
+		else:
+			abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/abilities_selector/abilities_selector.tscn").instance()
+		
+
+		_hud.add_child(abilities_selector)
+		selector_default = !selector_default
+
+		for ability in RunData.abilities:
+			abilities_selector.add_ability(ability, _player)
+	
+		abilities_selector.load_cooldowns(RunData.abilities_cooldowns)
 
 
 func _on_player_died(_p_player:Player)->void :

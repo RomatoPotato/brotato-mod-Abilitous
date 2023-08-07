@@ -55,15 +55,15 @@ func kill_tracker():
 	reload_track -= 1 if reload_track > 0 else 0
 
 
+func ability_is_charged() -> bool:
+	return reload_track <= 0
+
+
 func shoot():
-	if !should_shoot():
+	if !ability_is_charged():
 		return
 
 	_shooting_behavior.initial_position = player.position
 	_shooting_behavior.shoot(current_stats.max_range)
 
 	reload_track = current_stats.cooldown
-
-
-func should_shoot():
-	return reload_track <= 0
