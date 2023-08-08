@@ -27,7 +27,7 @@ func _process(_delta):
 
 
 func _input(_event):
-	if Input.is_key_pressed(KEY_C) and not _cleaning_up:
+	if Input.is_key_pressed(KEY_C) and not _cleaning_up && GameModeManager.current_gamemode_is_ability():
 		RunData.abilities_cooldowns = abilities_selector.save_cooldowns()
 
 		_hud.remove_child(abilities_selector)

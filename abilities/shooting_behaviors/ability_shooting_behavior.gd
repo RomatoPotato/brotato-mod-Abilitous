@@ -38,7 +38,9 @@ func imitate_weapon_stats(stats:Resource) -> WeaponStats :
 	new_stats.lifesteal = stats.lifesteal
 	new_stats.nb_projectiles = stats.nb_projectiles
 	new_stats.piercing = stats.piercing
+	new_stats.piercing_dmg_reduction = stats.piercing_dmg_reduction
 	new_stats.bounce = stats.bounce
+	new_stats.bounce_dmg_reduction = stats.bounce_dmg_reduction
 	new_stats.projectile_speed = stats.projectile_speed
 
 	return new_stats

@@ -1,3 +1,16 @@
-keys,en
-BULLET_SHOT,Bullet Shot
-FIRE_SHOT,Fire Shot
+keys,en,ru
+ABILITY,Ability,Способность
+ABILITIES,Abilities,Способности
+ABILITIES_MODE,Abilities mode,Режим способностей
+ABILITY_SELECTION,Ability selection,Выбор способности
+BULLET_SHOT,Vortex of Bullets,Вихрь пуль
+FIRE_SHOT,Fiery Sneeze,Огненный чих
+BULLET_SHOT_DESC,"Shoots bullets in all directions that bounce off enemies ","Стреляет во все стороны пулями, отскакивающими от врагов "
+FIRE_SHOT_DESC,Fires incendiary projectiles in all directions,Стреляет зажигательными снарядами во всех направлениях
+ABILITY_DEFAULT_STAT_FORMATTED,{0}: {1},
+ABILITY_PIERCING_FORMATTED,{0}: {1} (-{2}% damage),{0}: {1} (-{2}% урона)
+ABILITY_PIERCING_MUCH_FORMATTED,{0}: Infinity,{0}: Бесконечно
+ABILITY_PIERCING_MUCH_AND_REDUCTION_FORMATTED,{0}: Infinity (-{2}% damage),{0}: Бесконечно (-{2}% урона)
+RELOADS,Reloaded by,Перезарядка при
+RANGED_KILLS,killing enemies with ranged weapon,убийстве противников со стрелкового оружия
+MELEE_KILLS,killing enemies with melee weapon,убийстве противников с оружия ближнего боя

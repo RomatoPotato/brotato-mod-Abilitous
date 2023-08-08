@@ -15,6 +15,7 @@ func _ready():
 		description_container.add_child(ability_panel)
 		description_container.move_child(ability_panel, 0)
 
+
 func manage_back(event:InputEvent)->void :
 	if GameModeManager.current_gamemode_is_ability():
 		if event.is_action_pressed("ui_cancel") and not cancelled: # Brotato's code from difficulty_selection.gd

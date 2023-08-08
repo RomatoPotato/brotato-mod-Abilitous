@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.en.translation" ]
+files=[ "res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.en.translation", "res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.ru.translation" ]
 
 source_file="res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.csv"
-dest_files=[ "res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.en.translation" ]
+dest_files=[ "res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.en.translation", "res://mods-unpacked/RomatoPotato-Abilitato/translations/abilitato.ru.translation" ]
 
 [params]
 

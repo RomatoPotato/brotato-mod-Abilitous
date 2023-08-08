@@ -19,8 +19,8 @@ func get_ability_stats_text() -> String :
 
 
 func get_ability_desc_text() -> String :
-	var text = ""
+	return stats.col_desc_a + tr(description) + stats.col_b
 
-	text += description
 
-	return text
+func get_effects_text():
+	return .get_effects_text()

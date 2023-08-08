@@ -31,6 +31,7 @@ func _init(_modLoader = ModLoader):
 
 	# Add translations
 	ModLoaderMod.add_translation(trans_dir + "abilitato.en.translation")
+	ModLoaderMod.add_translation(trans_dir + "abilitato.ru.translation")
 
 
 func _ready():
