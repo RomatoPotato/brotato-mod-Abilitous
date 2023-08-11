@@ -30,8 +30,17 @@ func init_unlocked_pool()->void :
 	.init_unlocked_pool()
 	
 	for ability in abilities:
+		_tiers_data[ability.tier][TierData.ALL_ITEMS].push_back(ability)
 		_tiers_data[ability.tier][TIER_DATA_ABILITIES].push_back(ability)
-		_tiers_data[ability.tier][TIER_DATA_ABILITIES].push_back(ability)
+
+	#for i in range(_tiers_data.size()):
+	#	for j in range(_tiers_data[i].size()):
+	#		if _tiers_data[i][j] is Array and _tiers_data[i][j].size() > 0:
+	#			for ability in _tiers_data[i][j]:
+	#				if ability is AbilityData:
+	#					ModLoaderLog.info(str(ability.my_id), "ID")
+	#					ModLoaderLog.info(str(i), "i")
+	#					ModLoaderLog.info(str(j), "j")
 
 
 func get_shop_items(wave:int, number:int = NB_SHOP_ITEMS, shop_items:Array = [], locked_items:Array = [])->Array:
@@ -47,9 +56,12 @@ func get_rand_item_from_wave(wave:int, type:int, shop_items:Array = [], prev_sho
 
 	if GameModeManager.current_gamemode_is_ability():
 		if randf() > (1 - spawn_chance):
+			var item_tier = clamp(get_tier_from_wave(wave), RunData.effects["min_weapon_tier"], RunData.effects["max_weapon_tier"])
+			var pool = get_pool(item_tier, TIER_DATA_ABILITIES)
+
 			spawn_chance /= spawn_chance_reduction
 
-			var ability_to_spawn = Utils.get_rand_element(_tiers_data[0][TIER_DATA_ABILITIES])
+			var ability_to_spawn = Utils.get_rand_element(pool)
 
 			for ability in spawned_abilities:
 				if ability == ability_to_spawn:

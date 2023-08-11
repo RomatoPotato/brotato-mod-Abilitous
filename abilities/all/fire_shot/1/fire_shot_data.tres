@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/fire_shot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/1/fire_shot_stats.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/1/fire_shot_effect.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/abilitato_fire_shot.png" type="Texture" id=5]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/2/fire_shot_data_2.tres" type="Resource" id=6]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "fire_shot_1"
+unlocked_by_default = true
+icon = ExtResource( 5 )
+name = "FIRE_SHOT"
+tier = 0
+value = 40
+effects = [ ExtResource( 4 ) ]
+tracking_text = ""
+ability_id = "fire_shot"
+scene = ExtResource( 2 )
+stats = ExtResource( 3 )
+upgrades_into = ExtResource( 6 )
+description = "FIRE_SHOT_DESC"

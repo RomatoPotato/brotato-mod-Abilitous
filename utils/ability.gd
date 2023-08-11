@@ -14,6 +14,8 @@ onready var _shooting_behavior:WeaponShootingBehavior = $AbilityShootingBehavior
 
 var reload_track:int = -1
 
+var AbilityService = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_service.gd")
+
 func _ready():
 	var _behavior = _shooting_behavior.init(self)
 	init_stats()
@@ -23,12 +25,8 @@ func _ready():
 
 
 func init_stats():
-	current_stats = stats
-
-	for effect in effects:
-		if effect is BurningEffect:
-			current_stats.burning_data = BurningData.new(effect.burning_data.chance, effect.burning_data.damage, effect.burning_data.duration, 0)
-
+	current_stats = AbilityService.new().init_stats(stats, effects)
+	
 	match stats.reload_condition:
 		stats.ReloadCondition.RANGED_KILLS:
 			var _tracker = player.connect("killed_by_ranged", self, "kill_tracker")

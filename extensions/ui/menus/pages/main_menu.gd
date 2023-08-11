@@ -10,7 +10,7 @@ var ability_mode_button_pressed_style
 func _ready():
 	var buttons_left = $"HBoxContainer/ButtonsLeft"
 	
-	ability_mode_button = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/button_abilities_mode/button_abilities_mode.tscn").instance()
+	ability_mode_button = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/button_abilities_mode/button_abilities_mode.tscn").instance()
 	
 	ability_mode_button_normal_style = ability_mode_button.get_stylebox("normal")
 	ability_mode_button_hover_style = ability_mode_button.get_stylebox("hover")

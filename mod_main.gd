@@ -23,9 +23,9 @@ func _init(_modLoader = ModLoader):
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/run/difficulty_selection/difficulty_selection.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/shop/item_description.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/global/focus_manager.gd")
-	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/shop/shop_items_container.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "entities/units/movement_behaviors/player_movement_behavior.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "singletons/progress_data.gd")
+	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/shop/item_popup.gd")
 	
 	ModLoaderMod.new().call_deferred("install_script_extension", ext_dir + "ui/menus/shop/shop.gd")
 
@@ -35,5 +35,11 @@ func _init(_modLoader = ModLoader):
 
 
 func _ready():
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot_data.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/fire_shot_data.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/1/bullet_shot_data.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/2/bullet_shot_data_2.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/3/bullet_shot_data_3.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/4/bullet_shot_data_4.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/1/fire_shot_data.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/2/fire_shot_data_2.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/3/fire_shot_data_3.tres"))
+	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/4/fire_shot_data_4.tres"))

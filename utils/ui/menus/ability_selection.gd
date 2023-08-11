@@ -52,7 +52,8 @@ func get_elements_unlocked()->Array:
 	var unlocked_abilities = []
 
 	for ability in ItemService.abilities:
-		unlocked_abilities.push_back(ability.my_id)
+		if ability.tier == Tier.COMMON:
+			unlocked_abilities.push_back(ability.my_id)
 
 	return unlocked_abilities
 

@@ -78,6 +78,12 @@ func activate_ability():
 			current_abilities[ability_4_container].shoot()
 			ability_4_container.set_self_modulate(Color.black)
 
+
+func reload_stats():
+	for container in current_abilities:
+		if current_abilities[container] != null:
+			current_abilities[container].init_stats()
+
 		
 func save_cooldowns():
 	var cooldowns = []

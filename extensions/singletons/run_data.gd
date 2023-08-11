@@ -9,12 +9,23 @@ var starting_ability
 var abilities_cooldowns = []
 
 var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
 
 
-func add_ability(ability:ItemParentData) -> void:
+func add_ability(ability:ItemParentData) -> ItemParentData:
 	var new_ability = ability.duplicate()
 
 	abilities.push_back(new_ability)
+
+	return new_ability
+
+
+func remove_ability(ability:ItemParentData) -> void:
+	for i in range(abilities.size()):
+		if abilities[i].my_id == ability.my_id:
+			abilities.remove(i)
+			abilities_cooldowns.remove(i)
+			break
 
 
 func reset(restart:bool = false)->void :
@@ -66,3 +77,13 @@ func resume_from_state(state:Dictionary)->void :
 
 	if state.has("abilities_cooldowns"):
 		abilities_cooldowns = state.abilities_cooldowns
+
+
+func can_combine_ability(ability_data:ItemParentData)->bool:
+	var nb_duplicates = 0
+	
+	for ability in abilities:
+		if ability.my_id == ability_data.my_id:
+			nb_duplicates += 1
+	
+	return nb_duplicates >= 2 and ability_data.upgrades_into != null and ability_data.tier < RunData.effects["max_weapon_tier"]

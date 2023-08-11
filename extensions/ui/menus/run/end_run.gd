@@ -8,7 +8,7 @@ var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gam
 
 func _ready():
 	if GameModeManager.current_gamemode_is_ability():
-		var abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitato/resources/ui/menus/shop/abilities_container_vertical.tscn").instance()
+		var abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/shop/abilities_container_vertical.tscn").instance()
 
 		var newc = HBoxContainer.new()
 		newc.set("custom_constants/separation", 50)

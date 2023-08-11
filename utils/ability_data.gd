@@ -6,8 +6,8 @@ export (Resource) var stats = null
 export (Resource) var upgrades_into
 export (String) var description = ""
 
-
 var ModCategory = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/mod_category.gd")
+var AbilityService = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_service.gd")
 
 
 func get_category()->int:
@@ -15,7 +15,9 @@ func get_category()->int:
 
 
 func get_ability_stats_text() -> String :
-	return stats.get_text()
+	var current_stats = AbilityService.new().init_stats(stats, effects)
+
+	return current_stats.get_text(stats)
 
 
 func get_ability_desc_text() -> String :

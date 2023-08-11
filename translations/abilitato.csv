@@ -14,3 +14,4 @@ ABILITY_PIERCING_MUCH_AND_REDUCTION_FORMATTED,{0}: Infinity (-{2}% damage),{0}: 
 RELOADS,Reloaded by,Перезарядка при
 RANGED_KILLS,killing enemies with ranged weapon,убийстве противников со стрелкового оружия
 MELEE_KILLS,killing enemies with melee weapon,убийстве противников с оружия ближнего боя
+PROJECTILES,Projectile count,Кол-во снарядов
