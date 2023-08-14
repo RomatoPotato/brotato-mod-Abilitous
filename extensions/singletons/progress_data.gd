@@ -4,6 +4,13 @@ var cursor_pos
 
 var CURSOR_POS_PATH
 
+var ability_actions = {
+	"ability1": KEY_UP,
+	"ability2": KEY_RIGHT,
+	"ability3": KEY_DOWN,
+	"ability4": KEY_LEFT
+}
+
 
 func init_save_paths()->void :
 	.init_save_paths()
@@ -84,3 +91,17 @@ func deserialize_run_state(state:Dictionary)->Dictionary:
 			deserialized_run_state.abilities.push_back(ability_data)
 
 	return deserialized_run_state
+
+
+func init_settings()->void :
+	.init_settings()
+
+	settings.merge({
+		"ability_actions": ability_actions
+	})
+
+
+func apply_settings()->void :
+	ability_actions = settings.ability_actions
+
+	.apply_settings()

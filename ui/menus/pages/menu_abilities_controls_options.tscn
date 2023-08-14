@@ -1,0 +1,283 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/menu_abilities_controls_options.gd" type="Script" id=2]
+[ext_resource path="res://resources/themes/base_theme.tres" type="Theme" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilitato_ability_progress.png" type="Texture" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section.png" type="Texture" id=5]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_hovered.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_pressed.png" type="Texture" id=7]
+[ext_resource path="res://resources/fonts/actual/base/font_big_outlined.tres" type="DynamicFont" id=8]
+[ext_resource path="res://resources/fonts/actual/base/font_big_title.tres" type="DynamicFont" id=9]
+
+[node name="AbilitiesControlOptions" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -772, -316 )
+theme = ExtResource( 3 )
+custom_constants/separation = 50
+alignment = 1
+script = ExtResource( 2 )
+
+[node name="OptionsLabel" type="Label" parent="."]
+margin_top = 177.0
+margin_right = 1920.0
+margin_bottom = 250.0
+custom_fonts/font = ExtResource( 9 )
+text = "ABILITIES_CONTROLS"
+align = 1
+
+[node name="Options" type="HBoxContainer" parent="."]
+margin_top = 300.0
+margin_right = 1920.0
+margin_bottom = 788.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="SymbolsContainer" type="VBoxContainer" parent="Options"]
+margin_left = 36.0
+margin_right = 616.0
+margin_bottom = 488.0
+rect_min_size = Vector2( 580, 0 )
+
+[node name="SymbolsLabel" type="Label" parent="Options/SymbolsContainer"]
+margin_right = 580.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 9 )
+text = "SYMBOLS"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/SymbolsContainer"]
+margin_top = 77.0
+margin_right = 580.0
+margin_bottom = 367.0
+
+[node name="Label" type="Label" parent="Options/SymbolsContainer/VBoxContainer"]
+margin_right = 580.0
+margin_bottom = 45.0
+text = "NUMPAD_SYMBOLS"
+autowrap = true
+
+[node name="Label2" type="Label" parent="Options/SymbolsContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 580.0
+margin_bottom = 94.0
+text = "LMB_SYMBOLS"
+autowrap = true
+
+[node name="Label3" type="Label" parent="Options/SymbolsContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 580.0
+margin_bottom = 143.0
+text = "RMB_SYMBOLS"
+autowrap = true
+
+[node name="Label4" type="Label" parent="Options/SymbolsContainer/VBoxContainer"]
+margin_top = 147.0
+margin_right = 580.0
+margin_bottom = 192.0
+text = "MMB_SYMBOLS"
+autowrap = true
+
+[node name="Label5" type="Label" parent="Options/SymbolsContainer/VBoxContainer"]
+margin_top = 196.0
+margin_right = 580.0
+margin_bottom = 241.0
+text = "EMBS_SYMBOLS"
+autowrap = true
+
+[node name="Label6" type="Label" parent="Options/SymbolsContainer/VBoxContainer"]
+margin_top = 245.0
+margin_right = 580.0
+margin_bottom = 290.0
+text = "OTHER_MOUSE_SYMBOLS"
+autowrap = true
+
+[node name="GridContainer" type="GridContainer" parent="Options"]
+margin_left = 716.0
+margin_right = 1204.0
+margin_bottom = 488.0
+columns = 3
+
+[node name="EmptySpace" type="Control" parent="Options/GridContainer"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 120, 120 )
+
+[node name="Ability1" type="TextureButton" parent="Options/GridContainer"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+focus_neighbour_left = NodePath("../Ability4")
+focus_neighbour_right = NodePath("../Ability2")
+focus_neighbour_bottom = NodePath("../Ability3")
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Background" type="TextureRect" parent="Options/GridContainer/Ability1"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Options/GridContainer/Ability1"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 160, 160 )
+custom_fonts/font = ExtResource( 8 )
+align = 1
+valign = 1
+
+[node name="EmptySpace2" type="Control" parent="Options/GridContainer"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 120, 120 )
+
+[node name="Ability4" type="TextureButton" parent="Options/GridContainer"]
+margin_top = 164.0
+margin_right = 160.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 160, 160 )
+focus_neighbour_top = NodePath("../Ability1")
+focus_neighbour_right = NodePath("../Ability2")
+focus_neighbour_bottom = NodePath("../Ability3")
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Background" type="TextureRect" parent="Options/GridContainer/Ability4"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Options/GridContainer/Ability4"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 160, 160 )
+custom_fonts/font = ExtResource( 8 )
+align = 1
+valign = 1
+
+[node name="EmptySpace3" type="Control" parent="Options/GridContainer"]
+margin_left = 164.0
+margin_top = 164.0
+margin_right = 324.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 120, 120 )
+
+[node name="Ability2" type="TextureButton" parent="Options/GridContainer"]
+margin_left = 328.0
+margin_top = 164.0
+margin_right = 488.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 160, 160 )
+focus_neighbour_left = NodePath("../Ability4")
+focus_neighbour_top = NodePath("../Ability1")
+focus_neighbour_bottom = NodePath("../Ability3")
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Background" type="TextureRect" parent="Options/GridContainer/Ability2"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Options/GridContainer/Ability2"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 160, 160 )
+custom_fonts/font = ExtResource( 8 )
+align = 1
+valign = 1
+
+[node name="EmptySpace4" type="Control" parent="Options/GridContainer"]
+margin_top = 328.0
+margin_right = 160.0
+margin_bottom = 488.0
+rect_min_size = Vector2( 120, 120 )
+
+[node name="Ability3" type="TextureButton" parent="Options/GridContainer"]
+margin_left = 164.0
+margin_top = 328.0
+margin_right = 324.0
+margin_bottom = 488.0
+rect_min_size = Vector2( 160, 160 )
+focus_neighbour_left = NodePath("../Ability4")
+focus_neighbour_top = NodePath("../Ability1")
+focus_neighbour_right = NodePath("../Ability2")
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Background" type="TextureRect" parent="Options/GridContainer/Ability3"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Options/GridContainer/Ability3"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 160, 160 )
+custom_fonts/font = ExtResource( 8 )
+align = 1
+valign = 1
+
+[node name="InstructionContainer" type="VBoxContainer" parent="Options"]
+margin_left = 1304.0
+margin_right = 1884.0
+margin_bottom = 488.0
+rect_min_size = Vector2( 580, 0 )
+
+[node name="InstructionLabel" type="Label" parent="Options/InstructionContainer"]
+margin_right = 580.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 9 )
+text = "INSTRUCTION"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/InstructionContainer"]
+margin_top = 77.0
+margin_right = 580.0
+margin_bottom = 122.0
+
+[node name="Label" type="Label" parent="Options/InstructionContainer/VBoxContainer"]
+margin_right = 580.0
+margin_bottom = 45.0
+text = "INSTRUCTION_TEXT"
+autowrap = true
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 826.0
+margin_top = 838.0
+margin_right = 1093.0
+margin_bottom = 903.0
+focus_neighbour_bottom = NodePath("../Options/Column1/GameplayContainer/VBoxContainer/MouseOnlyButton")
+size_flags_horizontal = 4
+text = "MENU_BACK"
+script = ExtResource( 1 )
+
+[connection signal="hide" from="." to="." method="_on_AbilitiesControlOptions_hide"]
+[connection signal="pressed" from="Options/GridContainer/Ability1" to="." method="_on_Ability1_pressed"]
+[connection signal="pressed" from="Options/GridContainer/Ability4" to="." method="_on_Ability4_pressed"]
+[connection signal="pressed" from="Options/GridContainer/Ability2" to="." method="_on_Ability2_pressed"]
+[connection signal="pressed" from="Options/GridContainer/Ability3" to="." method="_on_Ability3_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

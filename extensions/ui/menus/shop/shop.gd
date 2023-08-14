@@ -56,30 +56,31 @@ func on_element_pressed(element:InventoryElement)->void :
 
 
 func on_item_combine_button_pressed(weapon_data:WeaponData, is_upgrade:bool = false)->void :
-	if not weapon_data is WeaponData:
+	if not weapon_data is WeaponData: # preventing from getting into the AbilityData to event handler
 		return
 
 	.on_item_combine_button_pressed(weapon_data, is_upgrade)
 
 
 func on_item_discard_button_pressed(weapon_data:WeaponData)->void :
-	if not weapon_data is WeaponData:
+	if not weapon_data is WeaponData: # preventing from getting into the AbilityData to event handler
 		return
 
 	.on_item_discard_button_pressed(weapon_data)
 
 
 func on_item_cancel_button_pressed(weapon_data:WeaponData)->void :
-	if not weapon_data is WeaponData:
+	if not weapon_data is WeaponData: # preventing from getting into the AbilityData to event handler
 		return
 
 	.on_item_cancel_button_pressed(weapon_data)
 
 
 func on_ability_item_discard_button_pressed(ability_data:ItemParentData) -> void:
-	if ability_data is WeaponData:
+	if ability_data is WeaponData: # preventing from getting into the WeaponData to event handler
 		return
 
+	# code below is taken from on_item_discard_button_pressed(weapon_data:WeaponData) but changed for AbilityData
 	_focus_manager.reset_focus()
 	abilities_container._elements.remove_element(ability_data)
 	RunData.remove_ability(ability_data)
@@ -89,12 +90,15 @@ func on_ability_item_discard_button_pressed(ability_data:ItemParentData) -> void
 	_shop_items_container.update_buttons_color()
 	_reroll_button.set_color_from_currency(RunData.gold)
 	SoundManager.play(Utils.get_rand_element(recycle_sounds), 0, 0.1, true)
+
+	# end
 		
 		
 func on_ability_item_combine_button_pressed(ability_data:ItemParentData, is_upgrade:bool = false) -> void:
-	if ability_data is WeaponData:
+	if ability_data is WeaponData: # preventing from getting into the WeaponData to event handler
 		return
 
+	# code below is taken from on_item_combine_button_pressed(weapon_data:WeaponData) but changed for AbilityData
 	_focus_manager.reset_focus()
 
 	var nb_to_remove = 2
@@ -122,12 +126,17 @@ func on_ability_item_combine_button_pressed(ability_data:ItemParentData, is_upgr
 	SoundManager.play(Utils.get_rand_element(combine_sounds), 0, 0.1, true)
 	abilities_container.set_label(get_abilities_label_text())
 
+	# end
+
 
 func on_ability_item_cancel_button_pressed(ability_data:ItemParentData)->void :
-	if ability_data is WeaponData:
+	if ability_data is WeaponData: # preventing from getting into the WeaponData to event handler
 		return
 
+	# code below is taken from on_item_cancel_button_pressed(weapon_data:WeaponData) but changed for AbilityData
 	_focus_manager.reset_focus()
 	_block_background.hide()
 	if $Content.visible:
 		abilities_container._elements.focus_element(ability_data)
+
+	# end

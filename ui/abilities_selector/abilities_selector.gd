@@ -61,22 +61,26 @@ func display_cooldown():
 
 
 func activate_ability():
-	if Input.is_key_pressed(KEY_UP):
+	if is_input_pressed(ProgressData.ability_actions["ability1"]) || Input.is_joy_button_pressed(0, JOY_XBOX_Y || JOY_SONY_TRIANGLE):
 		if !container_is_free(ability_1_container):
 			current_abilities[ability_1_container].shoot()
 			ability_1_container.set_self_modulate(Color.black)
-	if Input.is_key_pressed(KEY_RIGHT):
+	if is_input_pressed(ProgressData.ability_actions["ability2"]) || Input.is_joy_button_pressed(0, JOY_XBOX_B || JOY_SONY_CIRCLE):
 		if !container_is_free(ability_2_container):
 			current_abilities[ability_2_container].shoot()
 			ability_2_container.set_self_modulate(Color.black)
-	if Input.is_key_pressed(KEY_DOWN):
+	if is_input_pressed(ProgressData.ability_actions["ability3"]) || Input.is_joy_button_pressed(0, JOY_XBOX_A || JOY_SONY_X):
 		if !container_is_free(ability_3_container):
 			current_abilities[ability_3_container].shoot()
 			ability_3_container.set_self_modulate(Color.black)
-	if Input.is_key_pressed(KEY_LEFT):
+	if is_input_pressed(ProgressData.ability_actions["ability4"]) || Input.is_joy_button_pressed(0, JOY_XBOX_X || JOY_SONY_SQUARE):
 		if !container_is_free(ability_4_container):
 			current_abilities[ability_4_container].shoot()
 			ability_4_container.set_self_modulate(Color.black)
+
+
+func is_input_pressed(code:int) -> bool:
+	return Input.is_key_pressed(code) || Input.is_mouse_button_pressed(code)
 
 
 func reload_stats():

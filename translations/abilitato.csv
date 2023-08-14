@@ -15,3 +15,20 @@ RELOADS,Reloaded by,Перезарядка при
 RANGED_KILLS,killing enemies with ranged weapon,убийстве противников со стрелкового оружия
 MELEE_KILLS,killing enemies with melee weapon,убийстве противников с оружия ближнего боя
 PROJECTILES,Projectile count,Кол-во снарядов
+ABILITIES_CONTROLS,Abilities controls,Управление способностями
+LMB,LMB,ЛКМ
+MMB,MMB,СКМ
+RMB,RMB,ПКМ
+EMB1,EMB1,ДКМ1
+EMB2,EMB2,ДКМ2
+WD,WD,КВН
+WU,WU,КВВ
+SYMBOLS,Symbols,Обозначения
+INSTRUCTION,Instruction,Инструкция
+NUMPAD_SYMBOLS,[N] - numpad button,[N] - кнопки нампада
+LMB_SYMBOLS,LMB - left mouse button,ЛКМ - левая кнопка мыши
+RMB_SYMBOLS,RMB - right mouse button,ПКМ - правая кнопка мыши
+MMB_SYMBOLS,MMB - middle mouse button,СКМ - средняя кнопка мыши
+EMBS_SYMBOLS,"EMB1, EMB2 - extra mouse buttons","ДКМ1, ДКМ2 - дополнительные кнопки мыши"
+OTHER_MOUSE_SYMBOLS,[M] - other mouse buttons (if any),[M] - остальные кнопки мыши (если есть)
+INSTRUCTION_TEXT,"Click on the cell and then choose the button you want to assign. You can assign some keys and mouse buttons","Нажми на ячейку, а затем выбери кнопку, которую хочешь назначить. Можно назначить некоторые клавиши и кнопки мыши"

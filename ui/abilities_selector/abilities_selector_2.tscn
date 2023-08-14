@@ -2,7 +2,7 @@
 
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/ability_container.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilitato_ability_section_2.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ui/abilities_selector.gd" type="Script" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilities_selector.gd" type="Script" id=3]
 [ext_resource path="res://resources/fonts/actual/base/font_big_outlined.tres" type="DynamicFont" id=4]
 
 [node name="AbilitiesSelector" type="Container"]

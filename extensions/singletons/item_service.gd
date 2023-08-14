@@ -75,6 +75,7 @@ func get_rand_item_from_wave(wave:int, type:int, shop_items:Array = [], prev_sho
 
 
 func process_item_box(wave:int, _consumable_data:ConsumableData, fixed_tier:int = - 1)->ItemParentData:
+	# code below to prevent abilities from dropping out of crates
 	if GameModeManager.current_gamemode_is_ability():
 		while true:
 			var box_item = .process_item_box(wave, _consumable_data, fixed_tier)
