@@ -25,6 +25,10 @@ func _ready():
 		ability_4_container : null
 	}
 
+	if !ProgressData.tier_indicator:
+		for container in free_containers:
+			get_container_tier_indicator(container).hide()
+
 
 func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 	for container in free_containers:
@@ -45,6 +49,16 @@ func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 				
 			get_container_place(container).add_child(instance)
 			get_container_progress(container).max_value = instance.stats.cooldown
+
+			match ability_data.tier:
+				0:
+					get_container_tier_indicator(container).set_self_modulate("#c2c2c2")
+				1:
+					get_container_tier_indicator(container).set_self_modulate(ItemService.TIER_UNCOMMON_COLOR)
+				2:
+					get_container_tier_indicator(container).set_self_modulate(ItemService.TIER_RARE_COLOR)
+				3:
+					get_container_tier_indicator(container).set_self_modulate(ItemService.TIER_LEGENDARY_COLOR)
 
 			free_containers[container] = false
 			current_abilities[container] = instance
@@ -143,3 +157,7 @@ func get_container_place(_container:Node) -> Node:
 
 func get_container_label(_container:Node) -> Node:
 	return get_node(str(get_path_to(_container)) + "/Label")
+	
+	
+func get_container_tier_indicator(_container:Node) -> Node:
+	return get_node(str(get_path_to(_container)) + "/TierIndicator")

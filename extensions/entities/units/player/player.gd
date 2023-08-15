@@ -3,15 +3,18 @@ extends "res://entities/units/player/player.gd"
 signal killed_by_melee
 signal killed_by_ranged
 
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+
 
 func apply_items_effects()->void :	
 	.apply_items_effects()
 
-	for weapon in current_weapons:
-		if weapon is MeleeWeapon:
-			weapon._hitbox.connect("killed_something", self, "on_killed_something_by_melee")
-		elif weapon is RangedWeapon:
-			weapon._shooting_behavior.connect("projectile_shot", self, "on_projectile_shot")
+	if GameModeManager.current_gamemode_is_ability():
+		for weapon in current_weapons:
+			if weapon is MeleeWeapon:
+				weapon._hitbox.connect("killed_something", self, "on_killed_something_by_melee")
+			elif weapon is RangedWeapon:
+				weapon._shooting_behavior.connect("projectile_shot", self, "on_projectile_shot")
 
 
 func on_projectile_shot(projectile:Node2D)->void :

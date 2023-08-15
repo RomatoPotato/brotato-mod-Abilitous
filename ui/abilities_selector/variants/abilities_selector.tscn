@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/ability_container.tscn" type="PackedScene" id=1]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilitato_ability_section.png" type="Texture" id=2]
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilities_selector.gd" type="Script" id=3]
 [ext_resource path="res://resources/fonts/actual/base/font_big_outlined.tres" type="DynamicFont" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilitato_ability_progress.png" type="Texture" id=5]
 
 [node name="AbilitiesSelector" type="GridContainer"]
 margin_right = 385.0
 margin_bottom = 401.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
 columns = 3
 script = ExtResource( 3 )
 
@@ -20,8 +23,8 @@ rect_min_size = Vector2( 80, 80 )
 
 [node name="Ability1" type="TextureRect" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 84.0
-margin_right = 164.0
+margin_left = 80.0
+margin_right = 160.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 2 )
@@ -36,17 +39,31 @@ custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
+[node name="TierIndicator" type="TextureRect" parent="Ability1"]
+self_modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -15.0
+margin_top = -18.0
+margin_right = 15.0
+rect_min_size = Vector2( 30, 30 )
+texture = ExtResource( 5 )
+expand = true
+
 [node name="EmptySpace2" type="Control" parent="."]
-margin_left = 168.0
-margin_right = 248.0
+margin_left = 160.0
+margin_right = 240.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 
 [node name="Ability4" type="TextureRect" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 84.0
+margin_top = 80.0
 margin_right = 80.0
-margin_bottom = 164.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 2 )
 expand = true
@@ -61,19 +78,33 @@ custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
+[node name="TierIndicator" type="TextureRect" parent="Ability4"]
+self_modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -18.0
+margin_top = -15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 30, 30 )
+texture = ExtResource( 5 )
+expand = true
+
 [node name="EmptySpace3" type="Control" parent="."]
-margin_left = 84.0
-margin_top = 84.0
-margin_right = 164.0
-margin_bottom = 164.0
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 160.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 80, 80 )
 
 [node name="Ability2" type="TextureRect" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 168.0
-margin_top = 84.0
-margin_right = 248.0
-margin_bottom = 164.0
+margin_left = 160.0
+margin_top = 80.0
+margin_right = 240.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 2 )
 expand = true
@@ -88,18 +119,30 @@ custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
+[node name="TierIndicator" type="TextureRect" parent="Ability2"]
+self_modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -12.0
+margin_top = -15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 30, 30 )
+texture = ExtResource( 5 )
+expand = true
+
 [node name="EmptySpace4" type="Control" parent="."]
-margin_top = 168.0
+margin_top = 160.0
 margin_right = 80.0
-margin_bottom = 248.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 80, 80 )
 
 [node name="Ability3" type="TextureRect" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 84.0
-margin_top = 168.0
-margin_right = 164.0
-margin_bottom = 248.0
+margin_left = 80.0
+margin_top = 160.0
+margin_right = 160.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 2 )
 expand = true
@@ -113,3 +156,15 @@ rect_min_size = Vector2( 80, 80 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
+
+[node name="TierIndicator" type="TextureRect" parent="Ability3"]
+self_modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -15.0
+margin_top = -12.0
+margin_right = 15.0
+rect_min_size = Vector2( 30, 30 )
+texture = ExtResource( 5 )
+expand = true

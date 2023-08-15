@@ -1,11 +1,18 @@
 extends Control
 
 signal back_button_pressed
+signal abilities_controls_changed
 
 onready var ability_1 = $"Options/GridContainer/Ability1"
 onready var ability_2 = $"Options/GridContainer/Ability2"
 onready var ability_3 = $"Options/GridContainer/Ability3"
 onready var ability_4 = $"Options/GridContainer/Ability4"
+
+onready var appearances_option_button = $"Options/ChangeAppearanceContainer/OptionButton"
+onready var appearance_image = $"Options/ChangeAppearanceContainer/AppearanceContainer/AppearanceImage"
+onready var apperance_tier_indicator_check_button = $"Options/ChangeAppearanceContainer/CheckButton"
+
+var appearances_variants = []
 
 var ready_for_assign = false
 var assigned_key
@@ -32,6 +39,22 @@ var not_allowed_mouse_keys = [
 func _ready():
 	texture_hovered = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_hovered.png")
 	texture_chosed = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_chosed.png")
+
+	for appearance in ProgressData.abilities_selector_appearances:
+		appearances_variants.push_back(ProgressData.abilities_selector_appearances[appearance])
+
+	apperance_tier_indicator_check_button.pressed = ProgressData.tier_indicator
+
+	init_apperarance_options()
+
+
+func init_apperarance_options():
+	appearances_option_button.clear()
+	for appearance in ProgressData.abilities_selector_appearances:
+		appearances_option_button.add_item(tr(appearance))
+	appearances_option_button.select(ProgressData.current_selector_appearance)
+
+	_on_OptionButton_item_selected(ProgressData.current_selector_appearance)
 
 
 func init() -> void:
@@ -75,7 +98,31 @@ func _input(event):
 
 
 func _on_AbilitiesControlOptions_hide():
+	emit_signal("abilities_controls_changed") # for check if the arrows (which are responsible for the player's movement) are busy
+
+	ProgressData.settings.current_selector_appearance = ProgressData.current_selector_appearance
+	ProgressData.settings.tier_indicator = ProgressData.tier_indicator
+
 	ProgressData.save()
+
+
+func _on_OptionButton_item_selected(index):
+	var i = 0
+	
+	for key in ProgressData.abilities_selector_appearances:
+		if i == index:
+			ProgressData.current_selector_appearance = i
+			appearance_image.texture = load(appearances_variants[i])
+			break
+		i += 1
+
+
+func _on_CheckButton_toggled(button_pressed:bool):
+	ProgressData.tier_indicator = button_pressed
+
+
+func _on_AbilitiesControlOptions_visibility_changed():
+	init_apperarance_options()	
 
 
 func _on_BackButton_pressed():
@@ -242,4 +289,3 @@ func get_name_by_btn_mouse_code(code:int) -> String:
 			key_str = "[M] " + str(code)
 
 	return key_str
-

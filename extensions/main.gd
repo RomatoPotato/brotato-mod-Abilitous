@@ -9,16 +9,37 @@ var hud_size
 
 func _ready():
 	if GameModeManager.current_gamemode_is_ability():
-		abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilities_selector.tscn").instance()
-
 		hud_size = _hud.rect_size.y
 		_hud.rect_size.y = 1080
-		_hud.add_child(abilities_selector)
+		
+		init_abilities_selector()
 
-		for ability in RunData.abilities:
-			abilities_selector.add_ability(ability, _player)
+		_pause_menu._menus.get_node("AbilitiesControlsOptions").connect("abilities_controls_changed", self, "on_abilities_controls_changed")
 
-		abilities_selector.load_cooldowns(RunData.abilities_cooldowns)
+
+func init_abilities_selector():
+	if _hud.get_child_count() > 0:
+		_hud.remove_child(abilities_selector)
+
+	match ProgressData.current_selector_appearance:
+		1:
+			abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/variants/abilities_selector_2.tscn").instance()
+		_:
+			abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/variants/abilities_selector.tscn").instance()
+
+
+	_hud.add_child(abilities_selector)
+
+	for ability in RunData.abilities:
+		abilities_selector.add_ability(ability, _player)
+
+	abilities_selector.load_cooldowns(RunData.abilities_cooldowns)
+
+
+func on_abilities_controls_changed():
+	RunData.abilities_cooldowns = abilities_selector.save_cooldowns()
+	init_abilities_selector()
+	_player._movement_behavior.disable_busy_arrows()
 
 
 func _process(_delta):
@@ -29,27 +50,6 @@ func _process(_delta):
 func _physics_process(_delta):
 	if GameModeManager.current_gamemode_is_ability() and not _cleaning_up:
 		abilities_selector.activate_ability()
-
-
-func _input(_event):
-	if Input.is_key_pressed(KEY_C) and not _cleaning_up && GameModeManager.current_gamemode_is_ability():
-		RunData.abilities_cooldowns = abilities_selector.save_cooldowns()
-
-		_hud.remove_child(abilities_selector)
-
-		if selector_default:
-			abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilities_selector_2.tscn").instance()
-		else:
-			abilities_selector = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/abilities_selector.tscn").instance()
-		
-
-		_hud.add_child(abilities_selector)
-		selector_default = !selector_default
-
-		for ability in RunData.abilities:
-			abilities_selector.add_ability(ability, _player)
-	
-		abilities_selector.load_cooldowns(RunData.abilities_cooldowns)
 
 
 func reload_stats()->void :

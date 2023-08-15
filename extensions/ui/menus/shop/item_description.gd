@@ -4,9 +4,9 @@ var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability
 
 
 func set_item(item_data:ItemParentData)->void :
-	get_effects().show()
-
 	if item_data is AbilityData:
+		get_effects().show()
+
 		_category.text = tr("ABILITY")
 		
 		var tier_number = ItemService.get_tier_number(item_data.tier)
