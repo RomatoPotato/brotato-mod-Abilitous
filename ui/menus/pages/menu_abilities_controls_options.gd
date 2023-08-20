@@ -37,8 +37,8 @@ var not_allowed_mouse_keys = [
 
 
 func _ready():
-	texture_hovered = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_hovered.png")
-	texture_chosed = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_chosed.png")
+	texture_hovered = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_hovered.png")
+	texture_chosed = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_chosed.png")
 
 	for appearance in ProgressData.abilities_selector_appearances:
 		appearances_variants.push_back(ProgressData.abilities_selector_appearances[appearance])

@@ -25,7 +25,7 @@ func shoot_projectile(angle:float)-> void :
 	projectile.set_from(_parent)
 	projectile.weapon_stats = imitate_weapon_stats(stats)
 	projectile.set_damage(stats.damage, 1, 0, 0, stats.burning_data, false)
-	projectile.set_knockback_vector(Vector2.ZERO, stats.knockback)
+	projectile.set_knockback_vector( - Vector2(cos(angle), sin(angle)), stats.knockback)
 
 
 func imitate_weapon_stats(stats:Resource) -> WeaponStats :

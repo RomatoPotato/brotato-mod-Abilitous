@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/abilitato_ability_settings_section_hovered.png-71f7b42082cd41fb4a62d37391178bde.stex"
+path="res://.import/sociofobe_projectile.png-1c1bba4ee86f7d647ab232a55ddca843.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilitato_ability_settings_section_hovered.png"
-dest_files=[ "res://.import/abilitato_ability_settings_section_hovered.png-71f7b42082cd41fb4a62d37391178bde.stex" ]
+source_file="res://mods-unpacked/RomatoPotato-Abilitato/abilities/projectiles/sociofobe/sociofobe_projectile.png"
+dest_files=[ "res://.import/sociofobe_projectile.png-1c1bba4ee86f7d647ab232a55ddca843.stex" ]
 
 [params]
 

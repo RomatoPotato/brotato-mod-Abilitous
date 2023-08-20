@@ -5,11 +5,13 @@ const MOD_DIR = "RomatoPotato-Abilitato/"
 var dir = ""
 var ext_dir = ""
 var trans_dir = ""
+var abilities_dir = ""
 
 func _init(_modLoader = ModLoader):
 	dir = ModLoaderMod.get_unpacked_dir() + MOD_DIR
 	ext_dir = dir + "extensions/"
 	trans_dir = dir + "translations/"
+	abilities_dir = dir + "abilities/all/"
 
 	# Add extensions
 	ModLoaderMod.install_script_extension(ext_dir + "main.gd")
@@ -39,24 +41,25 @@ func _init(_modLoader = ModLoader):
 	ModLoaderMod.add_translation(trans_dir + "abilitato.en.translation")
 	ModLoaderMod.add_translation(trans_dir + "abilitato.ru.translation")
 
-	# ModLoaderMod.register_global_classes_from_array(
-	# 	[
-	# 		{
-	# 			"base" : "Node",
-	# 			"class" : "AbilitatoInput",
-	# 			"language" : "GDScript",
-	# 			"path" : "res://mods-unpacked/RomatoPotato-Abilitato/utils/abilitato_input.gd"
-	# 		}
-	# 	]
-	# )
-
 
 func _ready():
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/1/bullet_shot_data.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/2/bullet_shot_data_2.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/3/bullet_shot_data_3.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/4/bullet_shot_data_4.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/1/fire_shot_data.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/2/fire_shot_data_2.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/3/fire_shot_data_3.tres"))
-	ItemService.abilities.push_back(load("res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/fire_shot/4/fire_shot_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bullet_shot/1/bullet_shot_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bullet_shot/2/bullet_shot_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bullet_shot/3/bullet_shot_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bullet_shot/4/bullet_shot_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "fire_shot/1/fire_shot_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "fire_shot/2/fire_shot_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "fire_shot/3/fire_shot_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "fire_shot/4/fire_shot_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "sociophobe/1/sociofobe_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "sociophobe/2/sociofobe_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "sociophobe/3/sociofobe_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "sociophobe/4/sociofobe_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/1/friend_of_the_forest_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/2/friend_of_the_forest_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/3/friend_of_the_forest_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/4/friend_of_the_forest_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/1/bubblegum_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/2/bubblegum_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/3/bubblegum_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/4/bubblegum_data_4.tres"))

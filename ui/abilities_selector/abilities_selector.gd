@@ -68,8 +68,8 @@ func add_ability(ability_data:ItemParentData, _player:Player) -> void:
 func display_cooldown():
 	for container in current_abilities:
 		if !container_is_free(container):
-			get_container_progress(container).value = current_abilities[container].reload_track
-			get_container_label(container).text = str(current_abilities[container].reload_track)
+			get_container_progress(container).value = current_abilities[container].current_cooldown
+			get_container_label(container).text = str(current_abilities[container].current_cooldown)
 			if current_abilities[container].ability_is_charged():
 				container.set_self_modulate(Color.green)
 
@@ -108,7 +108,7 @@ func save_cooldowns():
 
 	for container in current_abilities:
 		if current_abilities[container] != null:
-			cooldowns.push_back(current_abilities[container].reload_track)
+			cooldowns.push_back(current_abilities[container].current_cooldown)
 
 	return cooldowns
 
@@ -118,7 +118,7 @@ func load_cooldowns(cooldowns):
 		var i = 0
 		for container in current_abilities:
 			if current_abilities[container] != null:
-				current_abilities[container].reload_track = cooldowns[i] if cooldowns.size() >= (i + 1) else current_abilities[container].current_stats.cooldown
+				current_abilities[container].current_cooldown = cooldowns[i] if cooldowns.size() >= (i + 1) else current_abilities[container].current_stats.cooldown
 				i += 1
 
 

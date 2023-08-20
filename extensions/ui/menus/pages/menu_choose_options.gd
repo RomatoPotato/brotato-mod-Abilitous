@@ -9,7 +9,6 @@ func _ready():
 
 	buttons_container.add_child_below_node(gameplay_button, abilities_controls_button)
 
-	abilities_controls_button.disconnect("pressed", self, "_on_GameplayButton_pressed")
 	abilities_controls_button.connect("pressed", self, "_on_AbilitiesControlsButton_pressed")
 
 

@@ -16,11 +16,13 @@ func add_ability(ability:ItemParentData) -> ItemParentData:
 	var new_ability = ability.duplicate()
 
 	abilities.push_back(new_ability)
+	apply_item_effects(new_ability)
 
 	return new_ability
 
 
 func remove_ability(ability:ItemParentData) -> void:
+	unapply_item_effects(ability)
 	for i in range(abilities.size()):
 		if abilities[i].my_id == ability.my_id:
 			abilities.remove(i)

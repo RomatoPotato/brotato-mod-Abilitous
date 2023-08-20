@@ -1,4 +1,5 @@
 extends ItemParentData
+class_name Abilitydata
 
 export (String) var ability_id = ""
 export (PackedScene) var scene = null
@@ -17,7 +18,7 @@ func get_category()->int:
 func get_ability_stats_text() -> String :
 	var current_stats = AbilityService.new().init_stats(stats, effects)
 
-	return current_stats.get_text(stats)
+	return current_stats.get_text(stats, ability_id)
 
 
 func get_ability_desc_text() -> String :

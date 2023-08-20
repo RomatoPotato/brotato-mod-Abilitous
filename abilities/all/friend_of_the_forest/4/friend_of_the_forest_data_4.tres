@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/friend_of_the_forest/friend_of_the_forest.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/friend_of_the_forest/friend_of_the_forest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/friend_of_the_forest/4/friend_of_the_forest_stats_4.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/friend_of_the_forest/4/friend_of_the_forest_effect_4.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "friend_of_the_forest_4"
+unlocked_by_default = true
+icon = ExtResource( 2 )
+name = "FRIEND_OF_THE_FOREST"
+tier = 3
+value = 352
+effects = [ ExtResource( 5 ) ]
+tracking_text = ""
+debuffs = [  ]
+ability_id = "friend_of_the_forest"
+scene = ExtResource( 3 )
+stats = ExtResource( 4 )
+description = "FRIEND_OF_THE_FOREST_DESC"

@@ -10,17 +10,17 @@
 
 [resource]
 script = ExtResource( 1 )
-damage = 1
+damage = 0
 cooldown = 30
 max_range = 300
-knockback = null
-lifesteal = null
+knockback = 0
+lifesteal = 0.0
 shooting_sounds = [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ) ]
 sound_db_mod = -5
 nb_projectiles = 30
 piercing = 1001
 piercing_dmg_reduction = 0.0
-bounce = null
+bounce = 0
 bounce_dmg_reduction = 0.0
 projectile_speed = 1000
 projectile_scene = ExtResource( 2 )

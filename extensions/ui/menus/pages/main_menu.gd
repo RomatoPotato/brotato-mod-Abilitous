@@ -25,7 +25,6 @@ func _ready():
 	ability_mode_button.focus_neighbour_top = start_button.get_path()
 	
 	ability_mode_button.connect("pressed", self, "_on_AbilitiesModButton_pressed")
-	ability_mode_button.disconnect("pressed", self, "_on_StartButton_pressed")
 
 
 func _process(_delta):

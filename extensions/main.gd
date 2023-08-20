@@ -67,12 +67,12 @@ func _on_player_died(_p_player:Player)->void :
 	._on_player_died(_p_player)
 
 
-func _on_EndWaveTimer_timeout()->void :
+func _on_WaveTimer_timeout()->void :
 	if GameModeManager.current_gamemode_is_ability():
 		_hud.rect_size.y = hud_size
 		abilities_selector.hide()
 
-	._on_EndWaveTimer_timeout()
+	._on_WaveTimer_timeout()
 
 
 func clean_up_room(is_last_wave:bool = false, is_run_lost:bool = false, is_run_won:bool = false)->void :
