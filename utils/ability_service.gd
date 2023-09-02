@@ -27,6 +27,7 @@ func init_stats(from_stats:Resource, effects:Array) -> Resource:
 	new_stats.bounce = current_stats.bounce
 	new_stats.bounce_dmg_reduction = current_stats.bounce_dmg_reduction
 	new_stats.projectile_speed = current_stats.projectile_speed
+	new_stats.additional_stat = current_stats.additional_stat
 	new_stats.projectile_scene = current_stats.projectile_scene
 	new_stats.reload_condition = current_stats.reload_condition
 

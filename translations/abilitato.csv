@@ -8,25 +8,43 @@ FIRE_SHOT,Fiery Sneeze,Огненный чих
 SOCIOFOBE,Sociofobe,Социофоб
 FRIEND_OF_THE_FOREST,Friend of the forest,Друг леса
 BUBBLEGUM,Bubblegum,Жвачка
-BULLET_SHOT_DESC,"Shoots bullets in all directions that bounce off enemies ","Стреляет во все стороны пулями, отскакивающими от врагов "
+FIRST_AID_KIT,First-aid kit,Аптечка
+BLOODLUST,Bloodlust,Жажда крови
+HOURGLASS,Hourglass,Песочные часы
+ANTISAPPER,Antisapper,Антисапёр
+EMERGENCY_SUPPORT,Emergency support,Экстренная поддержка
+BULLET_SHOT_DESC,"Shoots bullets in all directions that bounce off enemies","Стреляет во все стороны пулями, отскакивающими от врагов"
 FIRE_SHOT_DESC,Fires incendiary projectiles in all directions,Стреляет зажигательными снарядами во всех направлениях
 SOCIOFOBE_DESC,Pushes away all pushable enemies,Отталкивает всех отталкиваемых врагов
 FRIEND_OF_THE_FOREST_DESC,Grows trees around the player,Выращивает деревья вокруг игрока
-BUBBLEGUM_DESC,Inflates an impassable bubble of gum,Надувает непроходимый пузырь из жвачки
+BUBBLEGUM_DESC,Inflates an impassable and impenetrable bubble of gum,Надувает непроходимый и непробиваемый пузырь из жвачки
+FIRST_AID_KIT_DESC,Heals the player by a percentage of maximum health,Лечит игрока на процент от максимального здоровья
+BLOODLUST_DESC,Increases life steal (+100%) for a period of time,Увеличивает кражу жизни (+100%) на время
+HOURGLASS_DESC,Stops time for a period of time,Останавливает время на время
+ANTISAPPER_DESC,Throws landmines around,Разбрасывает вокруг мины
+EMERGENCY_SUPPORT_DESC,Calls for cool guys with rocket launchers to help Brotato,Призывает крутых парней с ракетомётами на помощь Бротошке
 ABILITY_DEFAULT_STAT_FORMATTED,{0}: {1},
+ABILITY_PERCENT_STAT_FORMATTED,{0}: {1}%,
 ABILITY_PIERCING_FORMATTED,{0}: {1} (-{2}% damage),{0}: {1} (-{2}% урона)
 ABILITY_PIERCING_MUCH_FORMATTED,{0}: infinity,{0}: бесконечно
 ABILITY_PIERCING_MUCH_AND_REDUCTION_FORMATTED,{0}: Infinity (-{2}% damage),{0}: Бесконечно (-{2}% урона)
+HEAL_FORMATTED,Heal: {0}%,Лечение: {0}%
 RELOADS,Reloading,Перезарядка
 DURATION,Duration,Длительность
-RANGED_KILLS,killing {0} enemies with ranged weapon,убийство {0} врагов со стрелкового оружия
-MELEE_KILLS,killing {0} enemies with melee weapon,убийство {0} врагов с оружия ближнего боя
+RANGED_KILLS,kill {0} enemies with ranged weapon,убить {0} врагов со стрелкового оружия
+MELEE_KILLS,kill {0} enemies with melee weapon,убить {0} врагов с оружия ближнего боя
 TIME,"{0} sec","{0} сек"
 NOT_MOVING,hold still for {0} sec,не двигаться {0} сек
 TAKE_DAMAGE,take damage {0} times,получить урон {0} раз
+PICK_UP,pick up {0} consumables,подобрать {0} расходников
+ANY_KILLS,kill {0} enemies,убить {0} врагов
+ENEMIES_COUNT,stay alive for {0} sec when there are {1} enemies,продержаться в живых {0} сек когда врагов {1}
 PROJECTILES,Projectile count,Кол-во снарядов
 TREES_COUNT,Trees count,Кол-во деревьев
-ABILITIES_CONTROLS,Abilities controls,Управление способностями
+LANDMINES_COUNT,Landmines count,Кол-во мин
+COOL_GUYS_COUNT,Cool guys,Крутых парней
+STAT_HEAL,Heal,Лечение
+ABILITIES_CONTROLS,Abilitato settings,Настройки Abilitato
 LMB,LMB,ЛКМ
 MMB,MMB,СКМ
 RMB,RMB,ПКМ

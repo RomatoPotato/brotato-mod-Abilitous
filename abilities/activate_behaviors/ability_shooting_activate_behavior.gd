@@ -1,20 +1,7 @@
-extends WeaponShootingBehavior
-class_name AbilityShootingBehavior
-
-var initial_position = Vector2.ZERO
-
-func shoot(_distance:float)->void :
-	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
-
-	var angle = 0
-	var angle_step = deg2rad(360 / _parent.current_stats.nb_projectiles)
-
-	for i in _parent.current_stats.nb_projectiles:
-		shoot_projectile(angle)
-		angle += angle_step
+extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_activate_behavior.gd"
 
 
-func shoot_projectile(angle:float)-> void :
+func release_projectile(angle:float)-> void :
 	var stats = _parent.current_stats
 	var projectile = Utils.instance_scene_on_main(stats.projectile_scene, initial_position)
 

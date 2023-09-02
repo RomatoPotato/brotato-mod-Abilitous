@@ -34,6 +34,8 @@ func _init(_modLoader = ModLoader):
 
 	ModLoaderMod.install_script_extension(ext_dir + "entities/units/player/player.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "entities/units/movement_behaviors/player_movement_behavior.gd")
+
+	ModLoaderMod.new().call_deferred("install_script_extension", ext_dir + "global/entity_spawner.gd")
 	
 	ModLoaderMod.new().call_deferred("install_script_extension", ext_dir + "ui/menus/shop/shop.gd")
 
@@ -59,7 +61,20 @@ func _ready():
 	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/2/friend_of_the_forest_data_2.tres"))
 	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/3/friend_of_the_forest_data_3.tres"))
 	ItemService.abilities.push_back(load(abilities_dir + "friend_of_the_forest/4/friend_of_the_forest_data_4.tres"))
-	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/1/bubblegum_data.tres"))
 	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/2/bubblegum_data_2.tres"))
 	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/3/bubblegum_data_3.tres"))
 	ItemService.abilities.push_back(load(abilities_dir + "bubblegum/4/bubblegum_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "first_aid_kit/1/first_aid_kit_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "first_aid_kit/2/first_aid_kit_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "first_aid_kit/3/first_aid_kit_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "first_aid_kit/4/first_aid_kit_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bloodlust/2/bloodlust_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bloodlust/3/bloodlust_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "bloodlust/4/bloodlust_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "hourglass/3/hourglass_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "hourglass/4/hourglass_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "antisapper/1/antisapper_data.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "antisapper/2/antisapper_data_2.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "antisapper/3/antisapper_data_3.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "antisapper/4/antisapper_data_4.tres"))
+	ItemService.abilities.push_back(load(abilities_dir + "emergency_support/4/emergency_support_data_4.tres"))

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/2/first_aid_kit_stats_2.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/first_aid_kit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/first_aid_kit_icon.png" type="Texture" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/3/first_aid_kit_data_3.tres" type="Resource" id=5]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/2/first_aid_kit_2_effect_2.tres" type="Resource" id=6]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/2/first_aid_kit_2_effect_1.tres" type="Resource" id=7]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "first_aid_kit_2"
+unlocked_by_default = true
+icon = ExtResource( 4 )
+name = "FIRST_AID_KIT"
+tier = 1
+value = 110
+effects = [ ExtResource( 7 ), ExtResource( 6 ) ]
+tracking_text = ""
+ability_id = "first_aid_kit"
+scene = ExtResource( 3 )
+stats = ExtResource( 2 )
+upgrades_into = ExtResource( 5 )
+description = "FIRST_AID_KIT_DESC"

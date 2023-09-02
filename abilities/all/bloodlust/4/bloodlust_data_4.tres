@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bloodlust/bloodlust.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bloodlust/bloodlust.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bloodlust/4/bloodlust_stats_4.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "bloodlust_2"
+unlocked_by_default = true
+icon = ExtResource( 2 )
+name = "BLOODLUST"
+tier = 3
+value = 520
+effects = [  ]
+tracking_text = ""
+ability_id = "bloodlust"
+scene = ExtResource( 3 )
+stats = ExtResource( 4 )
+description = "BLOODLUST_DESC"

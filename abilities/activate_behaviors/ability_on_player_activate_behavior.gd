@@ -1,10 +1,10 @@
-extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/shooting_behaviors/ability_shooting_behavior.gd"
+extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_activate_behavior.gd"
 
 export (Resource) var entity
 var instance
 
 
-func shoot_projectile(_angle:float)-> void :
+func release_projectile(_angle:float)-> void :
 	instance = entity.instance()
 	
 	instance.get_node("DurationTimer").wait_time = _parent.current_stats.duration

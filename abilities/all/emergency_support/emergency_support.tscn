@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_spawn_activate_behavior.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/emergency_support/supporter/supporter.tscn" type="PackedScene" id=3]
+
+[node name="EmergencySupport" instance=ExtResource( 2 )]
+
+[node name="AbilityActivateBehavior" parent="." index="0"]
+script = ExtResource( 1 )
+entity = ExtResource( 3 )
+structure_effect = null
+
+[connection signal="timeout" from="AbilityActivateBehavior/BehaviorCooldownTimer" to="AbilityActivateBehavior" method="_on_BehaviorCooldownTimer_timeout"]

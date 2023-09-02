@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/emergency_support/emergency_support_icon.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/emergency_support/emergency_support.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/emergency_support/4/emergency_support_stats_4.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "emergency_support_4"
+unlocked_by_default = true
+icon = ExtResource( 2 )
+name = "EMERGENCY_SUPPORT"
+tier = 3
+value = 666
+effects = [  ]
+tracking_text = ""
+ability_id = "emergency_support"
+scene = ExtResource( 3 )
+stats = ExtResource( 4 )
+description = "EMERGENCY_SUPPORT_DESC"

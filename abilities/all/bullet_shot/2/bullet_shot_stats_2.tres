@@ -12,6 +12,7 @@
 script = ExtResource( 1 )
 damage = 19
 cooldown = 47
+duration = -1
 max_range = 400
 knockback = 0
 lifesteal = 0.0
@@ -23,5 +24,6 @@ piercing_dmg_reduction = 0.0
 bounce = 2
 bounce_dmg_reduction = 0.0
 projectile_speed = 1500
+additional_stat = 0.0
 projectile_scene = ExtResource( 2 )
 reload_condition = 0

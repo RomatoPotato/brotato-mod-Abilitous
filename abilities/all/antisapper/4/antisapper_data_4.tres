@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/antisapper/antisapper.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/antisapper/antisapper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/antisapper/4/antisapper_stats_4.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/antisapper/4/antisapper_effect_4.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "antisapper_4"
+unlocked_by_default = true
+icon = ExtResource( 2 )
+name = "ANTISAPPER"
+tier = 3
+value = 380
+effects = [ ExtResource( 5 ) ]
+tracking_text = ""
+ability_id = "antisapper_1"
+scene = ExtResource( 3 )
+stats = ExtResource( 4 )
+description = "ANTISAPPER_DESC"

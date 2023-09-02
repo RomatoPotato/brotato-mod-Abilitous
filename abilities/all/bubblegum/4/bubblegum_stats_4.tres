@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_stats.gd" type="Script" id=1]
-[ext_resource path="res://weapons/melee_sounds/whoosh_swish_high_big_01.wav" type="AudioStream" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bubblegum/bubblegum_inflating.wav" type="AudioStream" id=2]
 
 [resource]
 script = ExtResource( 1 )
@@ -11,12 +11,13 @@ duration = 12
 max_range = 0
 knockback = 0
 lifesteal = 0.0
-shooting_sounds = [ ExtResource( 3 ) ]
+shooting_sounds = [ ExtResource( 2 ) ]
 sound_db_mod = -5
-nb_projectiles = 1
+nb_projectiles = 0
 piercing = 0
 piercing_dmg_reduction = 0.0
 bounce = 0
 bounce_dmg_reduction = 0.0
 projectile_speed = 0
+additional_stat = 0.0
 reload_condition = 4

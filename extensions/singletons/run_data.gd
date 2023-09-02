@@ -2,7 +2,8 @@ extends "res://singletons/run_data.gd"
 
 var abilities:Array
 var mod_effects:Dictionary = {
-	"ability_slot": 4
+	"ability_slot": 4,
+	"time_stopped": false
 }
 
 var starting_ability

@@ -7,6 +7,9 @@ enum ReloadCondition{
 	TIME,
 	NOT_MOVING,
 	TAKE_DAMAGE,
+	PICK_UP,
+	ANY_KILLS,
+	ENEMIES_COUNT
 }
 
 export (int) var damage: = 1
@@ -23,6 +26,7 @@ export (float, 0, 1, 0.05) var piercing_dmg_reduction: = 0.0
 export (int) var bounce: = 0
 export (float, 0, 1, 0.05) var bounce_dmg_reduction: = 0.0
 export (int) var projectile_speed: = 3000
+export (float) var additional_stat: = 0.0
 export (PackedScene) var projectile_scene = null
 export (ReloadCondition) var reload_condition
 
@@ -42,7 +46,7 @@ var col_desc_a = "[color=#008FE9]"
 func get_text(base_stats:Resource, ability_id:String) -> String :
 	var text = ""
 
-	text += get_reload_text()
+	text += get_reload_text(ability_id)
 	text += get_duration_text()
 	text += get_damage_text(base_stats)
 	text += get_knockback_text()
@@ -50,13 +54,20 @@ func get_text(base_stats:Resource, ability_id:String) -> String :
 	text += get_nb_projectiles(ability_id)
 	text += get_bouncing_text()
 	text += get_piercing_text()
+	text += get_add_stats_text(ability_id)
 	
 	return text
 
 
-func get_reload_text() -> String:
+func get_reload_text(ability_id:String) -> String:
+	var args = [col_pos_a + str(cooldown) + col_b]
+
+	match ability_id:
+		"emergency_support":
+			args.append(col_pos_a + str(additional_stat) + col_b)
+
 	return "\n" + Text.text("ABILITY_DEFAULT_STAT_FORMATTED", [col_a + tr("RELOADS") + col_b, 
-		Text.text(col_neutral_a + tr(ReloadCondition.keys()[reload_condition]) + col_b, [col_pos_a + str(cooldown) + col_b])])
+		Text.text(col_neutral_a + tr(ReloadCondition.keys()[reload_condition]) + col_b, args)])
 
 
 func get_duration_text():
@@ -105,8 +116,10 @@ func get_nb_projectiles(ability_id:String) -> String:
 	match ability_id:
 		"friend_of_the_forest":
 			stat_string = tr("TREES_COUNT")
-		"bubblegum":
-			return ""
+		"antisapper":
+			stat_string = tr("LANDMINES_COUNT")
+		"emergency_support":
+			stat_string = tr("COOL_GUYS_COUNT")
 
 	return "\n" + Text.text("ABILITY_DEFAULT_STAT_FORMATTED", [col_a + stat_string + col_b, col_neutral_a + str(nb_projectiles) + col_b])
 
@@ -139,3 +152,13 @@ func get_piercing_text()->String:
 		string_key = "ABILITY_PIERCING_FORMATTED"
 	
 	return "\n" + Text.text(string_key, [col_a + tr("PIERCING") + col_b, col_neutral_a + str(piercing) + col_b, col_neutral_a + str(round(piercing_dmg_reduction * 100.0)) + col_b])
+
+
+func get_add_stats_text(ability_id:String) -> String:
+	if additional_stat <= 0: return ""
+	
+	match ability_id:
+		"first_aid_kit":
+			return "\n" + Text.text("ABILITY_PERCENT_STAT_FORMATTED", [col_a + tr("STAT_HEAL") + col_b, str(additional_stat)])
+
+	return ""

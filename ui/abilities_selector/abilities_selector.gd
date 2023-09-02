@@ -75,19 +75,19 @@ func display_cooldown():
 
 
 func activate_ability():
-	if is_input_pressed(ProgressData.ability_actions["ability1"]) || Input.is_joy_button_pressed(0, JOY_XBOX_Y || JOY_SONY_TRIANGLE):
+	if is_input_pressed(ProgressData.ability_actions["ability1"]) || Input.is_joy_button_pressed(0, JOY_XBOX_Y):
 		if !container_is_free(ability_1_container):
 			current_abilities[ability_1_container].shoot()
 			ability_1_container.set_self_modulate(Color.black)
-	if is_input_pressed(ProgressData.ability_actions["ability2"]) || Input.is_joy_button_pressed(0, JOY_XBOX_B || JOY_SONY_CIRCLE):
+	if is_input_pressed(ProgressData.ability_actions["ability2"]) || Input.is_joy_button_pressed(0, JOY_XBOX_B):
 		if !container_is_free(ability_2_container):
 			current_abilities[ability_2_container].shoot()
 			ability_2_container.set_self_modulate(Color.black)
-	if is_input_pressed(ProgressData.ability_actions["ability3"]) || Input.is_joy_button_pressed(0, JOY_XBOX_A || JOY_SONY_X):
+	if is_input_pressed(ProgressData.ability_actions["ability3"]) || Input.is_joy_button_pressed(0, JOY_XBOX_A):
 		if !container_is_free(ability_3_container):
 			current_abilities[ability_3_container].shoot()
 			ability_3_container.set_self_modulate(Color.black)
-	if is_input_pressed(ProgressData.ability_actions["ability4"]) || Input.is_joy_button_pressed(0, JOY_XBOX_X || JOY_SONY_SQUARE):
+	if is_input_pressed(ProgressData.ability_actions["ability4"]) || Input.is_joy_button_pressed(0, JOY_XBOX_X):
 		if !container_is_free(ability_4_container):
 			current_abilities[ability_4_container].shoot()
 			ability_4_container.set_self_modulate(Color.black)
@@ -99,7 +99,7 @@ func is_input_pressed(code:int) -> bool:
 
 func reload_stats():
 	for container in current_abilities:
-		if current_abilities[container] != null:
+		if current_abilities[container]:
 			current_abilities[container].init_stats()
 
 		
@@ -107,22 +107,29 @@ func save_cooldowns():
 	var cooldowns = []
 
 	for container in current_abilities:
-		if current_abilities[container] != null:
+		if current_abilities[container]:
 			cooldowns.push_back(current_abilities[container].current_cooldown)
 
 	return cooldowns
 
 
 func load_cooldowns(cooldowns):
-	if cooldowns != null:
+	if cooldowns:
 		var i = 0
 		for container in current_abilities:
-			if current_abilities[container] != null:
+			if current_abilities[container]:
 				current_abilities[container].current_cooldown = cooldowns[i] if cooldowns.size() >= (i + 1) else current_abilities[container].current_stats.cooldown
 				i += 1
 
 
+func stop_timers():
+	for container in current_abilities:
+		if current_abilities[container]:
+			current_abilities[container].cooldown_timer.stop()
+
+
 func free_container(_container:Node):
+
 	get_container_icon(_container).texture = null
 	get_container_place(_container).queue_free()
 	get_container_progress(_container).max_value = 0

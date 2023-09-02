@@ -33,8 +33,6 @@ func get_abilities_label_text()->String:
 	
 
 func on_shop_item_bought(shop_item:ShopItem)->void :
-	.on_shop_item_bought(shop_item)
-
 	if GameModeManager.current_gamemode_is_ability():
 		if shop_item.item_data.get_category() == ModCategory.ABILITY:
 			if not RunData.has_ability_slot_available():
@@ -46,6 +44,8 @@ func on_shop_item_bought(shop_item:ShopItem)->void :
 			else:
 				RunData.add_ability(shop_item.item_data)
 				abilities_container.set_label(get_abilities_label_text())
+				
+	.on_shop_item_bought(shop_item)
 
 
 func on_element_pressed(element:InventoryElement)->void :

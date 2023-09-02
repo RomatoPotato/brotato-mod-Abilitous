@@ -305,16 +305,10 @@ margin_bottom = 158.0
 text = "APPEARANCE_BUTTON"
 clip_text = true
 
-[node name="CheckButton" type="CheckButton" parent="Options/ChangeAppearanceContainer"]
+[node name="AppearanceContainer" type="CenterContainer" parent="Options/ChangeAppearanceContainer"]
 margin_top = 178.0
 margin_right = 580.0
-margin_bottom = 248.0
-text = "TIER_INDICATOR"
-
-[node name="AppearanceContainer" type="CenterContainer" parent="Options/ChangeAppearanceContainer"]
-margin_top = 268.0
-margin_right = 580.0
-margin_bottom = 638.0
+margin_bottom = 548.0
 
 [node name="AppearanceImage" type="TextureRect" parent="Options/ChangeAppearanceContainer/AppearanceContainer"]
 margin_left = 115.0
@@ -332,12 +326,17 @@ margin_bottom = 370.0
 rect_min_size = Vector2( 370, 370 )
 custom_styles/panel = SubResource( 1 )
 
+[node name="CheckButton" type="CheckButton" parent="Options/ChangeAppearanceContainer"]
+margin_top = 568.0
+margin_right = 580.0
+margin_bottom = 638.0
+text = "TIER_INDICATOR"
+
 [node name="BackButton" type="Button" parent="."]
 margin_left = 826.0
 margin_top = 913.0
 margin_right = 1093.0
 margin_bottom = 978.0
-focus_neighbour_bottom = NodePath("../Options/Column1/GameplayContainer/VBoxContainer/MouseOnlyButton")
 size_flags_horizontal = 4
 text = "MENU_BACK"
 script = ExtResource( 1 )

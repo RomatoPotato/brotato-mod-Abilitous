@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/friend_of_the_forest_planting.mp3-9407c06d9e374318f39443d47107f7d5.mp3str"
+
+[deps]
+
+source_file="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/friend_of_the_forest/friend_of_the_forest_planting.mp3"
+dest_files=[ "res://.import/friend_of_the_forest_planting.mp3-9407c06d9e374318f39443d47107f7d5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

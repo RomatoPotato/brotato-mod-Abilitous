@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/hourglass/hourglass.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/hourglass/3/hourglass_stats_3.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/hourglass/hourglass.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/hourglass/4/hourglass_data_4.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "hourglass_3"
+unlocked_by_default = true
+icon = ExtResource( 2 )
+name = "HOURGLASS"
+tier = 2
+value = 300
+effects = [  ]
+tracking_text = ""
+ability_id = "hourglass"
+scene = ExtResource( 4 )
+stats = ExtResource( 3 )
+upgrades_into = ExtResource( 5 )
+description = "HOURGLASS_DESC"

@@ -2,6 +2,8 @@ extends "res://entities/units/player/player.gd"
 
 signal killed_by_melee
 signal killed_by_ranged
+signal consumable_picked_up
+signal enemy_died
 
 var not_moving_timer_for_ability
 var moving = true
@@ -37,6 +39,15 @@ func on_killed_something_by_melee(_thing_killed:Node) -> void :
 
 func on_killed_something_by_ranged(_thing_killed:Node) -> void :
 	emit_signal("killed_by_ranged")
+
+
+func on_consumable_picked_up()->void :
+	emit_signal("consumable_picked_up")
+
+
+func on_enemy_died(_enemy:Enemy) -> void:
+	if _enemy.can_drop_loot: # to prevent the number of dead enemies from increasing if they died because their maximum number was reached
+		emit_signal("enemy_died")
 
 
 func update_animation(movement:Vector2)->void :

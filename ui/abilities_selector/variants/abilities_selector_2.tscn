@@ -140,3 +140,5 @@ margin_top = -30.0
 rect_min_size = Vector2( 30, 30 )
 texture = ExtResource( 5 )
 expand = true
+
+[node name="Control" type="Control" parent="."]
