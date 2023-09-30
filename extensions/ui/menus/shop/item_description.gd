@@ -1,6 +1,6 @@
 extends "res://ui/menus/shop/item_description.gd"
 
-var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd")
 
 
 func set_item(item_data:ItemParentData)->void :

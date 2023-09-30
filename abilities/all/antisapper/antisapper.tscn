@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_spawn_activate_behavior.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/activate_behaviors/ability_spawn_activate_behavior.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/utils/ability.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/structures/landmine/landmine.tscn" type="PackedScene" id=3]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/antisapper/antisapper_landmine_effect.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/antisapper/antisapper_landmine_effect.tres" type="Resource" id=4]
 
 [node name="Antisapper" instance=ExtResource( 2 )]
 

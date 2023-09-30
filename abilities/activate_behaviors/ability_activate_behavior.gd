@@ -5,8 +5,6 @@ var initial_position = Vector2.ZERO
 
 
 func activate() -> void:
-	SoundManager.play(Utils.get_rand_element(_parent.current_stats.shooting_sounds), _parent.current_stats.sound_db_mod, 0.2)
-
 	if _parent.current_stats.nb_projectiles == 0:
 		release_projectile(0)
 		return

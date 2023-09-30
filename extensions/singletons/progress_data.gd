@@ -13,10 +13,11 @@ var ability_actions = {
 
 var current_selector_appearance = 0
 var tier_indicator = true
+var ability_charged_indicator = true
 
 var abilities_selector_appearances = {
-	"DEFAULT": "res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/variants/variant_1.png",
-	"SEPARATE_COOLDOWN": "res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/variants/variant_2.png"
+	"DEFAULT": "res://mods-unpacked/RomatoPotato-Abilitious/ui/abilities_selector/variants/variant_1.png",
+	"SEPARATE_COOLDOWN": "res://mods-unpacked/RomatoPotato-Abilitious/ui/abilities_selector/variants/variant_2.png"
 }
 
 
@@ -50,7 +51,8 @@ func init_settings()->void :
 	settings.merge({
 		"ability_actions": ability_actions,
 		"current_selector_appearance": current_selector_appearance,
-		"tier_indicator": tier_indicator
+		"tier_indicator": tier_indicator,
+		"ability_charged_indicator": ability_charged_indicator
 	})
 
 
@@ -58,5 +60,6 @@ func apply_settings()->void :
 	ability_actions = settings.ability_actions
 	current_selector_appearance = settings.current_selector_appearance
 	tier_indicator = settings.tier_indicator
+	ability_charged_indicator = settings.ability_charged_indicator
 
 	.apply_settings()

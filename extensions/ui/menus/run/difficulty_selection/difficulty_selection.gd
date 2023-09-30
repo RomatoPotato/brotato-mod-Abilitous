@@ -2,7 +2,7 @@ extends "res://ui/menus/run/difficulty_selection/difficulty_selection.gd"
 
 onready var description_container = $"MarginContainer/VBoxContainer/DescriptionContainer"
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
 
 
 func _ready():

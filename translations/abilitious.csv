@@ -44,7 +44,7 @@ TREES_COUNT,Trees count,Кол-во деревьев
 LANDMINES_COUNT,Landmines count,Кол-во мин
 COOL_GUYS_COUNT,Cool guys,Крутых парней
 STAT_HEAL,Heal,Лечение
-ABILITIES_CONTROLS,Abilitato settings,Настройки Abilitato
+ABILITIES_CONTROLS,Abilitious settings,Настройки Abilitious
 LMB,LMB,ЛКМ
 MMB,MMB,СКМ
 RMB,RMB,ПКМ
@@ -65,3 +65,10 @@ APPEARANCE,Appearance,Внешний вид
 DEFAULT,Default,По умолчанию
 SEPARATE_COOLDOWN,Separate ability cooldown,Отдельньная перезарядка способности
 TIER_INDICATOR,Tier indicator,Индиктатор класса
+ABILITY_CHARGE_INDICATOR,Ability readiness indicator,Индикатор готовности способности
+MENU_ABILITIES_CATALOG,Abilities catalog,Каталог способностей
+ACHIEVEMENTS_DISABLED,Achievement unlocking is disabled,Разблокировка достижений отключена
+ENEMY_HEALTH_DESC,Enemy health,Здоровье врагов
+ENEMY_DAMAGE_DESC,Enemy damage,Урон врагов
+LOTS_OF_ABILS,Lots of abilities!!!,Куча способностей!!!
+FUN,Fun!!!,Веселье!!!

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability.tscn" type="PackedScene" id=1]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_on_player_stat_activate_behavior.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/utils/ability.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/activate_behaviors/ability_on_player_stat_activate_behavior.gd" type="Script" id=2]
 
 [node name="FirstAidKit" instance=ExtResource( 1 )]
 

@@ -1,6 +1,6 @@
 extends "res://ui/menus/global/focus_manager.gd"
 
-var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd")
 
 func init_abilities_container(abilities_container:InventoryContainer = null) -> void :
     if abilities_container:

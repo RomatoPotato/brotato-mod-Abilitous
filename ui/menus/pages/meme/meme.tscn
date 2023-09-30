@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/meme/meme_spriteframes.tres" type="SpriteFrames" id=1]
+
+[node name="Meme" type="CenterContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
+scale = Vector2( 1.5, 1.5 )
+frames = ExtResource( 1 )
+animation = "cat_eating"
+frame = 14
+playing = true

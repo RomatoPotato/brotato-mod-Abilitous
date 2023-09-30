@@ -1,4 +1,4 @@
-extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_activate_behavior.gd"
+extends "res://mods-unpacked/RomatoPotato-Abilitious/abilities/activate_behaviors/ability_activate_behavior.gd"
 
 signal temp_effect_applied
 signal temp_effect_unapplied
@@ -60,7 +60,6 @@ func release_projectile(_angle:float) -> void:
 	if using_type == enum_using_type.TEMPORARY:
 		cooldown_timer.wait_time = _parent.current_stats.duration
 		cooldown_timer.start()
-		emit_signal("temp_effect_applied")
 
 	apply_effect()
 
@@ -68,14 +67,17 @@ func release_projectile(_angle:float) -> void:
 func apply_effect():
 	RunData.effects[stats.get(affected_stat)] += _parent.current_stats.additional_stat
 	RunData.emit_signal("stat_added", stats.get(affected_stat), _parent.current_stats.additional_stat)
+
+	if using_type == enum_using_type.TEMPORARY:
+		emit_signal("temp_effect_applied", _parent.ability_id)
 	
 	
-func unapply_effect(is_end_wave:bool = false):
+func unapply_effect():
 	RunData.effects[stats.get(affected_stat)] -= _parent.current_stats.additional_stat
 	RunData.emit_signal("stat_removed", stats.get(affected_stat), _parent.current_stats.additional_stat)
 
-	if !is_end_wave:
-		emit_signal("temp_effect_unapplied")
+	if using_type == enum_using_type.TEMPORARY:
+		emit_signal("temp_effect_unapplied", _parent.ability_id)
 
 
 func _on_WaveTimer_timeout():

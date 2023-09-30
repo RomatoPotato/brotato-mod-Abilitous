@@ -2,7 +2,7 @@ extends Node
 
 var MIN_RANGE = 50
 
-var AbilityStats = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_stats.gd")
+var AbilityStats = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_stats.gd")
 
 
 func init_stats(from_stats:Resource, effects:Array) -> Resource:
@@ -19,8 +19,6 @@ func init_stats(from_stats:Resource, effects:Array) -> Resource:
 	
 	new_stats.knockback = current_stats.knockback
 	new_stats.lifesteal = current_stats.lifesteal
-	new_stats.shooting_sounds = current_stats.shooting_sounds
-	new_stats.sound_db_mod = current_stats.sound_db_mod
 	new_stats.nb_projectiles = current_stats.nb_projectiles
 	new_stats.piercing = current_stats.piercing
 	new_stats.piercing_dmg_reduction = current_stats.piercing_dmg_reduction

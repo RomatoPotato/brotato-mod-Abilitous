@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/shop/abilities_container.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/shop/abilities_container.tscn" type="PackedScene" id=1]
 
 [node name="AbilitiesContainer" instance=ExtResource( 1 )]
 size_flags_horizontal = 8

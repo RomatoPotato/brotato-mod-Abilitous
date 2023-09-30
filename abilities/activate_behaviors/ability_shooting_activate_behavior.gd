@@ -1,4 +1,4 @@
-extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_activate_behavior.gd"
+extends "res://mods-unpacked/RomatoPotato-Abilitious/abilities/activate_behaviors/ability_activate_behavior.gd"
 
 
 func release_projectile(angle:float)-> void :

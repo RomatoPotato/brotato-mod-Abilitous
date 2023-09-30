@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=6 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bubblegum/bubblegum_icon.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bubblegum/bubblegum.tscn" type="PackedScene" id=3]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bubblegum/3/bubblegum_stats_3.tres" type="Resource" id=4]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bubblegum/4/bubblegum_data_4.tres" type="Resource" id=5]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bubblegum/bubblegum_icon.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bubblegum/bubblegum.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bubblegum/3/bubblegum_stats_3.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bubblegum/4/bubblegum_data_4.tres" type="Resource" id=5]
 
 [resource]
 script = ExtResource( 1 )

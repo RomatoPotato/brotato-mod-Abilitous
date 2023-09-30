@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bubblegum.png-891f23aace93b65380da2c80790a1f2f.stex"
+path="res://.import/bubblegum.png-c8fa06b2a782a6583dc876b82b4054d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bubblegum/bubblegum.png"
-dest_files=[ "res://.import/bubblegum.png-891f23aace93b65380da2c80790a1f2f.stex" ]
+source_file="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bubblegum/bubblegum.png"
+dest_files=[ "res://.import/bubblegum.png-c8fa06b2a782a6583dc876b82b4054d4.stex" ]
 
 [params]
 

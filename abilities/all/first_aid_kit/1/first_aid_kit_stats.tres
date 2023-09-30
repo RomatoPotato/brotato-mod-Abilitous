@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_stats.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_stats.gd" type="Script" id=1]
 [ext_resource path="res://ui/sounds/button_press.wav" type="AudioStream" id=2]
 
 [resource]
@@ -11,8 +11,6 @@ duration = 0
 max_range = 0
 knockback = 0
 lifesteal = 0.0
-shooting_sounds = [ ExtResource( 2 ) ]
-sound_db_mod = -5
 nb_projectiles = 0
 piercing = 0
 piercing_dmg_reduction = 0.0

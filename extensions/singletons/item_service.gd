@@ -10,8 +10,8 @@ var starting_spawn_chance = spawn_chance
 
 var TIER_DATA_ABILITIES = TierData.size()
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
-var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd")
 
 
 func reset_tiers_data()->void :

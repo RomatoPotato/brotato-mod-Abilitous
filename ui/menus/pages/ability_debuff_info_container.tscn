@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_debuff_info_container.gd" type="Script" id=1]
+[ext_resource path="res://resources/themes/base_theme.tres" type="Theme" id=2]
+
+[node name="AbilityDebuffInfoContainer" type="Control"]
+visible = false
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -10.0
+margin_right = 260.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 285.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 280, 0 )
+
+[node name="Label" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 25.0
+bbcode_enabled = true
+bbcode_text = "TEMPLATE"
+fit_content_height = true
+
+[connection signal="draw" from="." to="." method="_on_AbilityDebuffInfoContainer_draw"]

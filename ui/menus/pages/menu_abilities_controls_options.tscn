@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/menu_abilities_controls_options.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/menu_abilities_controls_options.gd" type="Script" id=2]
 [ext_resource path="res://resources/themes/base_theme.tres" type="Theme" id=3]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/ability_progress.png" type="Texture" id=4]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section.png" type="Texture" id=5]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_hovered.png" type="Texture" id=6]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_pressed.png" type="Texture" id=7]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/abilities_selector/ability_progress.png" type="Texture" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_settings_section.png" type="Texture" id=5]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_settings_section_hovered.png" type="Texture" id=6]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_settings_section_pressed.png" type="Texture" id=7]
 [ext_resource path="res://resources/fonts/actual/base/font_big_outlined.tres" type="DynamicFont" id=8]
 [ext_resource path="res://resources/fonts/actual/base/font_big_title.tres" type="DynamicFont" id=9]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/abilities_controls_font.tres" type="DynamicFont" id=10]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/abilities_controls_font.tres" type="DynamicFont" id=10]
 [ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=11]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/variants/variant_1.png" type="Texture" id=12]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/abilities_selector/variants/variant_1.png" type="Texture" id=12]
+[ext_resource path="res://resources/fonts/actual/base/font_small_title.tres" type="DynamicFont" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0 )
@@ -35,29 +36,29 @@ alignment = 1
 script = ExtResource( 2 )
 
 [node name="OptionsLabel" type="Label" parent="."]
-margin_top = 102.0
+margin_top = 57.0
 margin_right = 1920.0
-margin_bottom = 175.0
+margin_bottom = 130.0
 custom_fonts/font = ExtResource( 9 )
 text = "ABILITIES_CONTROLS"
 align = 1
 
 [node name="Options" type="HBoxContainer" parent="."]
-margin_top = 225.0
+margin_top = 180.0
 margin_right = 1920.0
-margin_bottom = 863.0
-custom_constants/separation = 100
+margin_bottom = 908.0
+custom_constants/separation = 50
 alignment = 1
 
 [node name="SymbolsAndInfoContainer" type="VBoxContainer" parent="Options"]
-margin_left = 36.0
-margin_right = 616.0
-margin_bottom = 638.0
-rect_min_size = Vector2( 580, 0 )
+margin_left = 66.0
+margin_right = 666.0
+margin_bottom = 728.0
+rect_min_size = Vector2( 600, 0 )
 custom_constants/separation = 20
 
 [node name="SymbolsLabel" type="Label" parent="Options/SymbolsAndInfoContainer"]
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 9 )
 text = "SYMBOLS"
@@ -65,11 +66,11 @@ align = 1
 
 [node name="SymbolsContainer" type="VBoxContainer" parent="Options/SymbolsAndInfoContainer"]
 margin_top = 93.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 305.0
 
 [node name="Label" type="Label" parent="Options/SymbolsAndInfoContainer/SymbolsContainer"]
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 10 )
 text = "NUMPAD_SYMBOLS"
@@ -77,7 +78,7 @@ autowrap = true
 
 [node name="Label2" type="Label" parent="Options/SymbolsAndInfoContainer/SymbolsContainer"]
 margin_top = 36.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 68.0
 custom_fonts/font = ExtResource( 10 )
 text = "LMB_SYMBOLS"
@@ -85,7 +86,7 @@ autowrap = true
 
 [node name="Label3" type="Label" parent="Options/SymbolsAndInfoContainer/SymbolsContainer"]
 margin_top = 72.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 104.0
 custom_fonts/font = ExtResource( 10 )
 text = "RMB_SYMBOLS"
@@ -93,7 +94,7 @@ autowrap = true
 
 [node name="Label4" type="Label" parent="Options/SymbolsAndInfoContainer/SymbolsContainer"]
 margin_top = 108.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 140.0
 custom_fonts/font = ExtResource( 10 )
 text = "MMB_SYMBOLS"
@@ -101,7 +102,7 @@ autowrap = true
 
 [node name="Label5" type="Label" parent="Options/SymbolsAndInfoContainer/SymbolsContainer"]
 margin_top = 144.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 176.0
 custom_fonts/font = ExtResource( 10 )
 text = "EMBS_SYMBOLS"
@@ -109,7 +110,7 @@ autowrap = true
 
 [node name="Label6" type="Label" parent="Options/SymbolsAndInfoContainer/SymbolsContainer"]
 margin_top = 180.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 212.0
 custom_fonts/font = ExtResource( 10 )
 text = "OTHER_MOUSE_SYMBOLS"
@@ -117,7 +118,7 @@ autowrap = true
 
 [node name="InstructionLabel" type="Label" parent="Options/SymbolsAndInfoContainer"]
 margin_top = 325.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 398.0
 custom_fonts/font = ExtResource( 9 )
 text = "INSTRUCTION"
@@ -125,11 +126,11 @@ align = 1
 
 [node name="InstructionContainer" type="VBoxContainer" parent="Options/SymbolsAndInfoContainer"]
 margin_top = 418.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 463.0
 
 [node name="Label" type="Label" parent="Options/SymbolsAndInfoContainer/InstructionContainer"]
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 11 )
 text = "INSTRUCTION_TEXT"
@@ -138,7 +139,7 @@ autowrap = true
 [node name="GridContainer" type="GridContainer" parent="Options"]
 margin_left = 716.0
 margin_right = 1204.0
-margin_bottom = 638.0
+margin_bottom = 728.0
 columns = 3
 
 [node name="EmptySpace" type="Control" parent="Options/GridContainer"]
@@ -284,59 +285,74 @@ align = 1
 valign = 1
 
 [node name="ChangeAppearanceContainer" type="VBoxContainer" parent="Options"]
-margin_left = 1304.0
-margin_right = 1884.0
-margin_bottom = 638.0
-rect_min_size = Vector2( 580, 0 )
+margin_left = 1254.0
+margin_right = 1854.0
+margin_bottom = 728.0
+rect_min_size = Vector2( 600, 0 )
 custom_constants/separation = 20
 alignment = 1
 
 [node name="AppearanceLabel" type="Label" parent="Options/ChangeAppearanceContainer"]
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 73.0
 custom_fonts/font = ExtResource( 9 )
 text = "APPEARANCE"
 align = 1
 
-[node name="OptionButton" type="OptionButton" parent="Options/ChangeAppearanceContainer"]
+[node name="AppearanceOptionButton" type="OptionButton" parent="Options/ChangeAppearanceContainer"]
 margin_top = 93.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 158.0
+focus_neighbour_left = NodePath("../../GridContainer/Ability2")
+focus_neighbour_bottom = NodePath("../TierIndicatorCheckButton")
 text = "APPEARANCE_BUTTON"
 clip_text = true
 
 [node name="AppearanceContainer" type="CenterContainer" parent="Options/ChangeAppearanceContainer"]
 margin_top = 178.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 548.0
 
 [node name="AppearanceImage" type="TextureRect" parent="Options/ChangeAppearanceContainer/AppearanceContainer"]
-margin_left = 115.0
+margin_left = 125.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 475.0
 margin_bottom = 360.0
 rect_min_size = Vector2( 350, 350 )
 texture = ExtResource( 12 )
 expand = true
 
 [node name="Border" type="Panel" parent="Options/ChangeAppearanceContainer/AppearanceContainer"]
-margin_left = 105.0
-margin_right = 475.0
+margin_left = 115.0
+margin_right = 485.0
 margin_bottom = 370.0
 rect_min_size = Vector2( 370, 370 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="CheckButton" type="CheckButton" parent="Options/ChangeAppearanceContainer"]
+[node name="TierIndicatorCheckButton" type="CheckButton" parent="Options/ChangeAppearanceContainer"]
 margin_top = 568.0
-margin_right = 580.0
+margin_right = 600.0
 margin_bottom = 638.0
+focus_neighbour_left = NodePath("../../../BackButton")
+focus_neighbour_top = NodePath("../AppearanceOptionButton")
 text = "TIER_INDICATOR"
+
+[node name="AbilityChargeIndicatorCheckButton" type="CheckButton" parent="Options/ChangeAppearanceContainer"]
+margin_top = 658.0
+margin_right = 600.0
+margin_bottom = 728.0
+focus_neighbour_left = NodePath("../../../BackButton")
+focus_neighbour_top = NodePath("../AppearanceOptionButton")
+custom_fonts/font = ExtResource( 13 )
+text = "ABILITY_CHARGE_INDICATOR"
+clip_text = true
 
 [node name="BackButton" type="Button" parent="."]
 margin_left = 826.0
-margin_top = 913.0
+margin_top = 958.0
 margin_right = 1093.0
-margin_bottom = 978.0
+margin_bottom = 1023.0
+focus_neighbour_right = NodePath("../Options/ChangeAppearanceContainer/TierIndicatorCheckButton")
 size_flags_horizontal = 4
 text = "MENU_BACK"
 script = ExtResource( 1 )
@@ -347,6 +363,7 @@ script = ExtResource( 1 )
 [connection signal="pressed" from="Options/GridContainer/Ability4" to="." method="_on_Ability4_pressed"]
 [connection signal="pressed" from="Options/GridContainer/Ability2" to="." method="_on_Ability2_pressed"]
 [connection signal="pressed" from="Options/GridContainer/Ability3" to="." method="_on_Ability3_pressed"]
-[connection signal="item_selected" from="Options/ChangeAppearanceContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
-[connection signal="toggled" from="Options/ChangeAppearanceContainer/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="item_selected" from="Options/ChangeAppearanceContainer/AppearanceOptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="toggled" from="Options/ChangeAppearanceContainer/TierIndicatorCheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="Options/ChangeAppearanceContainer/AbilityChargeIndicatorCheckButton" to="." method="_on_AbilityChargeIndicatorCheckButton_toggled"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

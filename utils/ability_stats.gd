@@ -18,8 +18,6 @@ export (int) var duration: = -1
 export (int, 0, 10000) var max_range: = 100
 export (int, 0, 10000) var knockback: = 0
 export (float, 0, 1.0, 0.01) var lifesteal: = 0.0
-export (Array, Resource) var shooting_sounds
-export (int) var sound_db_mod = - 5
 export (int) var nb_projectiles: = 1
 export (int) var piercing: = 0
 export (float, 0, 1, 0.05) var piercing_dmg_reduction: = 0.0
@@ -32,14 +30,12 @@ export (ReloadCondition) var reload_condition
 
 var burning_data:BurningData = BurningData.new()
 
-var weapon_stats = WeaponStats.new()
-var col_a = weapon_stats.col_a
-var col_neutral_a = weapon_stats.col_neutral_a
-var col_pos_a = weapon_stats.col_pos_a
-var col_neg_a = weapon_stats.col_neg_a
-var col_b = weapon_stats.col_b
-var init_a = weapon_stats.init_a
-
+var col_a = "[color=#" + Utils.SECONDARY_FONT_COLOR.to_html() + "]"
+var col_neutral_a = "[color=white]"
+var col_pos_a = "[color=" + Utils.POS_COLOR_STR + "]"
+var col_neg_a = "[color=" + Utils.NEG_COLOR_STR + "]"
+var col_b = "[/color]"
+var init_a = " [color=" + Utils.GRAY_COLOR_STR + "]| "
 var col_desc_a = "[color=#008FE9]"
 
 
@@ -80,7 +76,7 @@ func get_duration_text():
 func get_damage_text(base_stats:Resource)->String:
 	if damage <= 0: return ""
 
-	var a = weapon_stats.get_col_a(damage, base_stats.damage)
+	var a = get_col_a(damage, base_stats.damage)
 	var damage_text = a + str(damage) + col_b
 
 	if damage != base_stats.damage:
@@ -99,7 +95,7 @@ func get_knockback_text():
 func get_range_text(base_stats:Resource)->String:
 	if max_range <= 0: return ""
 	
-	var a = weapon_stats.get_col_a(max_range, base_stats.max_range)
+	var a = get_col_a(max_range, base_stats.max_range)
 	var range_text = a + str(max_range) + col_b
 	
 	if max_range != base_stats.max_range:
@@ -162,3 +158,10 @@ func get_add_stats_text(ability_id:String) -> String:
 			return "\n" + Text.text("ABILITY_PERCENT_STAT_FORMATTED", [col_a + tr("STAT_HEAL") + col_b, str(additional_stat)])
 
 	return ""
+
+
+# code below is taken from weapon_stats.gd
+func get_col_a(value:float, base_value:float)->String:
+	if value > base_value:return col_pos_a
+	elif value == base_value:return col_neutral_a
+	else :return col_neg_a

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=6 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/1/bullet_shot_stats.tres" type="Resource" id=3]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/2/bullet_shot_data_2.tres" type="Resource" id=4]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/bullet_shot/bullet_shot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bullet_shot/bullet_shot.png" type="Texture" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bullet_shot/1/bullet_shot_stats.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bullet_shot/2/bullet_shot_data_2.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/bullet_shot/bullet_shot.tscn" type="PackedScene" id=5]
 
 [resource]
 script = ExtResource( 1 )

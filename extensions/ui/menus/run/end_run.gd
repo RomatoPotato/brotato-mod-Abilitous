@@ -3,12 +3,12 @@ extends "res://ui/menus/run/end_run.gd"
 onready var container_inner = $"MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"
 onready var container = $"MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer"
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
 
 
 func _ready():
 	if GameModeManager.current_gamemode_is_ability():
-		var abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/shop/abilities_container_vertical.tscn").instance()
+		var abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/shop/abilities_container_vertical.tscn").instance()
 
 		var newc = HBoxContainer.new()
 		newc.set("custom_constants/separation", 50)

@@ -1,4 +1,4 @@
-extends "res://mods-unpacked/RomatoPotato-Abilitato/utils/entities/ally/ally.gd"
+extends "res://mods-unpacked/RomatoPotato-Abilitious/utils/entities/ally/ally.gd"
 
 onready var _running_smoke:Particles2D = $RunningSmoke
 onready var _shadow:Sprite = $Animation/Shadow

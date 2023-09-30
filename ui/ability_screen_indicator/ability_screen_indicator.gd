@@ -27,3 +27,16 @@ func lightening():
 	)
 
 	tween.start()
+
+
+func blink():
+	tween.interpolate_property(
+		self,
+		"color:a",
+		1,
+		0,
+		0.5,
+		Tween.TRANS_LINEAR
+	)
+
+	tween.start()

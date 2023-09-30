@@ -1,11 +1,11 @@
-extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_activate_behavior.gd"
+extends "res://mods-unpacked/RomatoPotato-Abilitious/abilities/activate_behaviors/ability_activate_behavior.gd"
 
 export (Resource) var entity
 export (Resource) var structure_effect
 
 var entity_spawner
 
-var Ally = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/entities/ally/ally.gd")
+var Ally = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/entities/ally/ally.gd")
 
 onready var cooldown_timer = $"BehaviorCooldownTimer"
 

@@ -5,19 +5,18 @@ onready var empty_space = $"Content/MarginContainer/HBoxContainer/VBoxContainer/
 
 var abilities_container
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
-var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
-var ModCategory = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/mod_category.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd")
 
 
 func _ready():
 	if GameModeManager.current_gamemode_is_ability():
-		abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/shop/abilities_container.tscn").instance()
+		abilities_container = load("res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/shop/abilities_container.tscn").instance()
 
 		container.add_child_below_node(empty_space, abilities_container)
 		container.set("custom_constants/separation", 50)
 		
-		abilities_container.set_data(get_abilities_label_text(), ModCategory.ABILITY, RunData.abilities)
+		abilities_container.set_data(get_abilities_label_text(), 10, RunData.abilities)
 		_items_container._elements.columns = 6
 		
 		_focus_manager.init_abilities_container(abilities_container)
@@ -34,7 +33,7 @@ func get_abilities_label_text()->String:
 
 func on_shop_item_bought(shop_item:ShopItem)->void :
 	if GameModeManager.current_gamemode_is_ability():
-		if shop_item.item_data.get_category() == ModCategory.ABILITY:
+		if shop_item.item_data.get_category() == 10:
 			if not RunData.has_ability_slot_available():
 				for ability in RunData.abilities:
 					if ability.my_id == shop_item.item_data.my_id and ability.upgrades_into != null:

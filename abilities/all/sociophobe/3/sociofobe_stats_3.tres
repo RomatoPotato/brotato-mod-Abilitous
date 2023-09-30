@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_stats.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/abilities/projectiles/sociofobe/sociofobe_projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_stats.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/abilities/projectiles/sociofobe/sociofobe_projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://weapons/ranged/taser/taser.wav" type="AudioStream" id=3]
 
 [resource]
@@ -11,8 +11,6 @@ cooldown = 40
 max_range = 550
 knockback = 55
 lifesteal = 0.0
-shooting_sounds = [ ExtResource( 3 ) ]
-sound_db_mod = -5
 nb_projectiles = 20
 piercing = 1001
 piercing_dmg_reduction = 0.0

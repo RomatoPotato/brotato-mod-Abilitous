@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sociofobe.png-fa165381a82cd998dc3abe173bb5f708.stex"
+path="res://.import/sociofobe.png-2bbb62087fc504b34e83631237db22b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/sociophobe/sociofobe.png"
-dest_files=[ "res://.import/sociofobe.png-fa165381a82cd998dc3abe173bb5f708.stex" ]
+source_file="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/sociophobe/sociofobe.png"
+dest_files=[ "res://.import/sociofobe.png-2bbb62087fc504b34e83631237db22b9.stex" ]
 
 [params]
 

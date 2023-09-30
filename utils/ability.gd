@@ -1,8 +1,12 @@
 class_name Ability
 extends Node2D
 
-signal temp_effect_applied(ability_id)
-signal temp_effect_unapplied(ability_id)
+signal cooldown_changed(ability)
+signal duration_changed(ability)
+signal ability_charged(ability)
+signal ability_activated(ability)
+signal duration_timer_started(ability)
+signal duration_timer_ended(ability)
 
 var stats:Resource
 var ability_id:String
@@ -15,20 +19,18 @@ var current_stats
 
 onready var activate_behavior:Behavior = $AbilityActivateBehavior
 onready var cooldown_timer = $"CooldownTimer"
+onready var duration_timer = $"DurationTimer"
 
 var current_cooldown:int = -1
+var current_duration:int = -1
+var charged_flag = false
 
-var AbilityService = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_service.gd")
+var AbilityService = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_service.gd")
 var entity_spawner
 
 
 func _ready():
 	var _behavior = activate_behavior.init(self)
-
-	for _sign in _behavior.get_signal_list():
-		if _sign["name"] == "temp_effect_applied":
-			_behavior.connect("temp_effect_applied", self, "on_temp_effect_applied")
-			_behavior.connect("temp_effect_unapplied", self, "on_temp_effect_unapplied")
 
 	init_stats()
 	
@@ -57,7 +59,7 @@ func _ready():
 
 
 func _process(_delta):
-	if entity_spawner:
+	if current_stats.reload_condition == current_stats.ReloadCondition.ENEMIES_COUNT:
 		if entity_spawner.get_all_enemies().size() >= current_stats.additional_stat && cooldown_timer.is_stopped():
 			cooldown_timer.start()
 		elif entity_spawner.get_all_enemies().size() < current_stats.additional_stat && !cooldown_timer.is_stopped():
@@ -73,7 +75,16 @@ func set_player(_player:Player):
 
 
 func on_cooldown_changed():
-	current_cooldown -= 1 if current_cooldown > 0 else 0
+	if current_duration > 0 || current_cooldown <= 0:
+		return
+
+	if current_cooldown > 0:
+		current_cooldown -= 1
+		emit_signal("cooldown_changed", self)
+
+	if ability_charged() && !charged_flag:
+		charged_flag = true
+		emit_signal("ability_charged", self)
 
 	if current_cooldown == 0:
 		if cooldown_timer:
@@ -84,26 +95,42 @@ func _on_player_took_damage(_unit:Unit, _value:int, _knockback_direction:Vector2
 	on_cooldown_changed()
 
 
-func ability_is_charged() -> bool:
+func ability_charged():
 	return current_cooldown <= 0
 
 
 func shoot():
-	if !ability_is_charged():
+	if !ability_charged():
 		return
+
+	if current_stats.reload_condition == current_stats.ReloadCondition.TIME:
+		cooldown_timer.start()
+
+	charged_flag = false
 
 	activate_behavior.initial_position = player.position
 	activate_behavior.activate()
 
 	current_cooldown = current_stats.cooldown
+	emit_signal("ability_activated", self)
 
-	if cooldown_timer:
-		cooldown_timer.start()
+	if current_stats.duration != -1:
+		current_duration = current_stats.duration
+		duration_timer.start()
+		emit_signal("duration_timer_started", self)
+		emit_signal("duration_changed", self)
 
 
-func on_temp_effect_applied():
-	emit_signal("temp_effect_applied", ability_id)
+func _on_DurationTimer_timeout():
+	if current_duration > 0:
+		current_duration -= 1
+		emit_signal("duration_changed", self)
 
+	if current_duration == 0:
+		current_duration = -1
 
-func on_temp_effect_unapplied():
-	emit_signal("temp_effect_unapplied", ability_id)
+		if cooldown_timer:
+			cooldown_timer.start()
+		
+		emit_signal("duration_timer_ended", self)
+		emit_signal("cooldown_changed", self)

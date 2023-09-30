@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/first_aid_kit_icon.png-4effc01936fcf3d75d71bbef118e291e.stex"
+path="res://.import/first_aid_kit_icon.png-492a1e963c48ae92b8efcd0b39ecf8e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/RomatoPotato-Abilitato/abilities/all/first_aid_kit/first_aid_kit_icon.png"
-dest_files=[ "res://.import/first_aid_kit_icon.png-4effc01936fcf3d75d71bbef118e291e.stex" ]
+source_file="res://mods-unpacked/RomatoPotato-Abilitious/abilities/all/first_aid_kit/first_aid_kit_icon.png"
+dest_files=[ "res://.import/first_aid_kit_icon.png-492a1e963c48ae92b8efcd0b39ecf8e0.stex" ]
 
 [params]
 

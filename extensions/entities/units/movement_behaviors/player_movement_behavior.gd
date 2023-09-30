@@ -5,7 +5,7 @@ var is_arrow_right_used = true
 var is_arrow_down_used = true
 var is_arrow_left_used = true
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
 
 
 func _ready():

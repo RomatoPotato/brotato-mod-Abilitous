@@ -8,7 +8,7 @@ signal enemy_died
 var not_moving_timer_for_ability
 var moving = true
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
 
 
 func _ready():

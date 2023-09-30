@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods-unpacked/RomatoPotato-Abilitious/translations/abilitious.en.translation", "res://mods-unpacked/RomatoPotato-Abilitious/translations/abilitious.ru.translation" ]
+
+source_file="res://mods-unpacked/RomatoPotato-Abilitious/translations/abilitious.csv"
+dest_files=[ "res://mods-unpacked/RomatoPotato-Abilitious/translations/abilitious.en.translation", "res://mods-unpacked/RomatoPotato-Abilitious/translations/abilitious.ru.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

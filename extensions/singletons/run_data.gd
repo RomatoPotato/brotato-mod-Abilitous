@@ -9,8 +9,8 @@ var mod_effects:Dictionary = {
 var starting_ability
 var abilities_cooldowns = []
 
-var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/gamemode_manager.gd")
-var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitato/utils/ability_data.gd")
+var GameModeManager = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/gamemode_manager.gd")
+var AbilityData = load("res://mods-unpacked/RomatoPotato-Abilitious/utils/ability_data.gd")
 
 
 func add_ability(ability:ItemParentData) -> ItemParentData:
@@ -55,6 +55,7 @@ func get_state(
 	)->Dictionary:
 
 	var mod_state = {
+		"current_gm_is_ability": GameModeManager.current_gamemode_is_ability(),
 		"abilities": abilities.duplicate(),
 		"starting_ability": starting_ability.my_id if starting_ability != null else "",
 		"abilities_cooldowns": abilities_cooldowns
@@ -69,10 +70,13 @@ func get_state(
 func resume_from_state(state:Dictionary)->void :
 	.resume_from_state(state)
 
-	if state.has("abilities"):
-		if state.abilities.size() > 0:
-			GameModeManager.change_gamemode(GameModeManager.GameMode.ABILITY)
-		
+	if state.has("current_gm_is_ability"):
+		if state.current_gm_is_ability:
+			GameModeManager.change_gamemode(GameModeManager.GameMode.ABILITY, true)
+		else:
+			GameModeManager.change_gamemode(GameModeManager.GameMode.DEFAULT, true)
+
+	if state.has("abilities"):		
 		abilities = state.abilities
 
 	if state.has("starting_ability"):

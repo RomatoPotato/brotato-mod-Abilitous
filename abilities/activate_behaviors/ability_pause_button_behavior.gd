@@ -1,4 +1,7 @@
-extends "res://mods-unpacked/RomatoPotato-Abilitato/abilities/activate_behaviors/ability_activate_behavior.gd"
+extends "res://mods-unpacked/RomatoPotato-Abilitious/abilities/activate_behaviors/ability_activate_behavior.gd"
+
+signal temp_effect_applied
+signal temp_effect_unapplied
 
 onready var cooldown_timer = $"BehaviorCooldownTimer"
 
@@ -15,6 +18,8 @@ func _ready():
 func release_projectile(_angle:float) -> void:
 	RunData.mod_effects["time_stopped"] = true
 
+	emit_signal("temp_effect_applied", _parent.ability_id)
+
 	cooldown_timer.wait_time = _parent.current_stats.duration
 	cooldown_timer.start()
 
@@ -25,8 +30,13 @@ func _on_BehaviorCooldownTimer_timeout():
 	RunData.mod_effects["time_stopped"] = false
 	unpause_all_entities()
 
+	emit_signal("temp_effect_unapplied", _parent.ability_id)
+
 
 func _on_WaveTimer_timeout():
+	if RunData.mod_effects["time_stopped"]:
+		emit_signal("temp_effect_unapplied", _parent.ability_id)
+
 	remove_child(cooldown_timer)
 	RunData.mod_effects["time_stopped"] = false
 	unpause_all_entities()

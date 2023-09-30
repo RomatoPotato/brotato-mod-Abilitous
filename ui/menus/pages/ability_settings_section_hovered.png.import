@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ability_settings_section_hovered.png-ac62f89b3da9d30e7b22f6acca3099bb.stex"
+path="res://.import/ability_settings_section_hovered.png-f3f786e0b51135bcae1fcdef4c422bd8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_hovered.png"
-dest_files=[ "res://.import/ability_settings_section_hovered.png-ac62f89b3da9d30e7b22f6acca3099bb.stex" ]
+source_file="res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_settings_section_hovered.png"
+dest_files=[ "res://.import/ability_settings_section_hovered.png-f3f786e0b51135bcae1fcdef4c422bd8.stex" ]
 
 [params]
 

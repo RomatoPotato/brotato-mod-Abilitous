@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitato/ui/abilities_selector/ability_progress.png" type="Texture" id=1]
+[ext_resource path="res://mods-unpacked/RomatoPotato-Abilitious/ui/abilities_selector/ability_progress.png" type="Texture" id=1]
 
 [node name="AbilityContainer" type="TextureRect"]
 margin_right = 40.0

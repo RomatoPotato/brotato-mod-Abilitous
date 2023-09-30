@@ -8,9 +8,10 @@ onready var ability_2 = $"Options/GridContainer/Ability2"
 onready var ability_3 = $"Options/GridContainer/Ability3"
 onready var ability_4 = $"Options/GridContainer/Ability4"
 
-onready var appearances_option_button = $"Options/ChangeAppearanceContainer/OptionButton"
+onready var appearances_option_button = $"Options/ChangeAppearanceContainer/AppearanceOptionButton"
 onready var appearance_image = $"Options/ChangeAppearanceContainer/AppearanceContainer/AppearanceImage"
-onready var apperance_tier_indicator_check_button = $"Options/ChangeAppearanceContainer/CheckButton"
+onready var apperance_tier_indicator_check_button = $"Options/ChangeAppearanceContainer/TierIndicatorCheckButton"
+onready var apperance_ability_charged_indicator_check_button = $"Options/ChangeAppearanceContainer/AbilityChargeIndicatorCheckButton"
 
 var appearances_variants = []
 
@@ -37,13 +38,14 @@ var not_allowed_mouse_keys = [
 
 
 func _ready():
-	texture_hovered = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_hovered.png")
-	texture_chosed = load("res://mods-unpacked/RomatoPotato-Abilitato/ui/menus/pages/ability_settings_section_chosed.png")
+	texture_hovered = load("res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_settings_section_hovered.png")
+	texture_chosed = load("res://mods-unpacked/RomatoPotato-Abilitious/ui/menus/pages/ability_settings_section_chosed.png")
 
 	for appearance in ProgressData.abilities_selector_appearances:
 		appearances_variants.push_back(ProgressData.abilities_selector_appearances[appearance])
 
 	apperance_tier_indicator_check_button.pressed = ProgressData.tier_indicator
+	apperance_ability_charged_indicator_check_button.pressed = ProgressData.ability_charged_indicator
 
 	init_apperarance_options()
 
@@ -102,6 +104,7 @@ func _on_AbilitiesControlOptions_hide():
 
 	ProgressData.settings.current_selector_appearance = ProgressData.current_selector_appearance
 	ProgressData.settings.tier_indicator = ProgressData.tier_indicator
+	ProgressData.settings.ability_charged_indicator = ProgressData.ability_charged_indicator
 
 	ProgressData.save()
 
@@ -119,6 +122,10 @@ func _on_OptionButton_item_selected(index):
 
 func _on_CheckButton_toggled(button_pressed:bool):
 	ProgressData.tier_indicator = button_pressed
+	
+
+func _on_AbilityChargeIndicatorCheckButton_toggled(button_pressed):
+	ProgressData.ability_charged_indicator = button_pressed
 
 
 func _on_AbilitiesControlOptions_visibility_changed():
