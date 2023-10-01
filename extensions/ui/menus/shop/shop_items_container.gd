@@ -14,7 +14,7 @@ func on_shop_item_buy_button_pressed(shop_item:ShopItem)->void :
         and (
             not player_has_ability
             or shop_item.item_data.upgrades_into == null
-            or (RunData.effects["max_weapon_tier"] < shop_item.item_data.upgrades_into.tier)
+            or (RunData.mod_effects["max_ability_tier"] < shop_item.item_data.upgrades_into.tier)
            )
        ):
        return 

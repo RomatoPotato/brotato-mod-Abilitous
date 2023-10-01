@@ -19,12 +19,13 @@ func _ready():
 		abilities_container.set_data(get_abilities_label_text(), 10, RunData.abilities)
 		_items_container._elements.columns = 6
 		
-		_focus_manager.init_abilities_container(abilities_container)
-		var _error_abilities_item_bought = connect("item_bought", abilities_container._elements, "on_item_bought")
-		
 		var _error_cancel_item = _item_popup.connect("item_cancel_button_pressed", self, "on_ability_item_cancel_button_pressed")
 		var _error_discard_item = _item_popup.connect("item_discard_button_pressed", self, "on_ability_item_discard_button_pressed")
 		var _error_combine_item = _item_popup.connect("item_combine_button_pressed", self, "on_ability_item_combine_button_pressed")
+
+		var _error_abilities_item_bought = connect("item_bought", abilities_container._elements, "on_item_bought")
+		
+		_focus_manager.init_abilities_container(abilities_container)
 
 
 func get_abilities_label_text()->String:
@@ -32,19 +33,20 @@ func get_abilities_label_text()->String:
 	
 
 func on_shop_item_bought(shop_item:ShopItem)->void :
+	.on_shop_item_bought(shop_item)
+	
 	if GameModeManager.current_gamemode_is_ability():
 		if shop_item.item_data.get_category() == 10:
 			if not RunData.has_ability_slot_available():
 				for ability in RunData.abilities:
 					if ability.my_id == shop_item.item_data.my_id and ability.upgrades_into != null:
 						var _ability = RunData.add_ability(shop_item.item_data)
-						on_ability_item_combine_button_pressed(ability)
+						on_ability_item_combine_button_pressed(_ability)
 						break
 			else:
 				RunData.add_ability(shop_item.item_data)
 				abilities_container.set_label(get_abilities_label_text())
 				
-	.on_shop_item_bought(shop_item)
 
 
 func on_element_pressed(element:InventoryElement)->void :
@@ -93,7 +95,7 @@ func on_ability_item_discard_button_pressed(ability_data:ItemParentData) -> void
 	# end
 		
 		
-func on_ability_item_combine_button_pressed(ability_data:ItemParentData, is_upgrade:bool = false) -> void:
+func on_ability_item_combine_button_pressed(ability_data:ItemParentData) -> void:
 	if ability_data is WeaponData: # preventing from getting into the WeaponData to event handler
 		return
 
@@ -102,14 +104,9 @@ func on_ability_item_combine_button_pressed(ability_data:ItemParentData, is_upgr
 
 	var nb_to_remove = 2
 	
-	if is_upgrade:
-		nb_to_remove = 1
-	
 	abilities_container._elements.remove_element(ability_data, nb_to_remove)
 	RunData.remove_ability(ability_data)
-	
-	if not is_upgrade:
-		RunData.remove_ability(ability_data)
+	RunData.remove_ability(ability_data)
 	
 	reset_item_popup_focus()
 	

@@ -56,7 +56,7 @@ func get_rand_item_from_wave(wave:int, type:int, shop_items:Array = [], prev_sho
 
 	if GameModeManager.current_gamemode_is_ability():
 		if randf() > (1 - spawn_chance):
-			var item_tier = clamp(get_tier_from_wave(wave), RunData.effects["min_weapon_tier"], RunData.effects["max_weapon_tier"])
+			var item_tier = clamp(get_tier_from_wave(wave), RunData.mod_effects["min_ability_tier"], RunData.mod_effects["max_ability_tier"])
 			var pool = get_pool(item_tier, TIER_DATA_ABILITIES)
 
 			spawn_chance /= spawn_chance_reduction

@@ -3,7 +3,9 @@ extends "res://singletons/run_data.gd"
 var abilities:Array
 var mod_effects:Dictionary = {
 	"ability_slot": 4,
-	"time_stopped": false
+	"time_stopped": false,
+	"min_ability_tier": 0,
+	"max_ability_tier": 99,
 }
 
 var starting_ability
@@ -93,4 +95,4 @@ func can_combine_ability(ability_data:ItemParentData)->bool:
 		if ability.my_id == ability_data.my_id:
 			nb_duplicates += 1
 	
-	return nb_duplicates >= 2 and ability_data.upgrades_into != null and ability_data.tier < RunData.effects["max_weapon_tier"]
+	return nb_duplicates >= 2 and ability_data.upgrades_into != null and ability_data.tier < 99

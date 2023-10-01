@@ -25,6 +25,10 @@ func _ready():
 
 		_pause_menu._menus.get_node("AbilitiesControlsOptions").connect("abilities_controls_changed", self, "on_abilities_controls_changed")
 
+		var wave_time = ZoneService.get_wave_data(RunData.current_zone, RunData.current_wave).wave_duration
+		_wave_timer.wait_time = wave_time * 1.2
+		_wave_timer.start()
+
 
 func init_abilities_selector():
 	if abilities_selector:
