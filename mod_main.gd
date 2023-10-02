@@ -20,7 +20,6 @@ func _init(_modLoader = ModLoader):
 	ModLoaderMod.install_script_extension(ext_dir + "singletons/menu_data.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "singletons/item_service.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "singletons/progress_data.gd")
-	ModLoaderMod.install_script_extension(ext_dir + "singletons/challenge_service.gd")
 
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/menus.gd")
 	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/pages/main_menu.gd")

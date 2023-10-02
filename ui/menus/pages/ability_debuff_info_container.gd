@@ -24,7 +24,6 @@ func write_info():
 	bbcode_text += col_b + col_neutral_a + tr("WAVE_DURATION") + " +20%" + col_b + "\n"
 	bbcode_text += col_neutral_a + tr("ENEMY_HEALTH_DESC") + col_neg_a + " +10%" + col_b + "\n"
 	bbcode_text += col_neutral_a + tr("ENEMY_DAMAGE_DESC") + col_pos_a + " -10%" + col_b + "\n"
-	bbcode_text += col_neg_a + tr("ACHIEVEMENTS_DISABLED") + col_b + "\n"
 	bbcode_text += col_pos_a + tr("LOTS_OF_ABILS") + col_b + "\n"
 	bbcode_text += col_pos_a + tr("FUN") + col_b
 
